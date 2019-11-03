@@ -101,10 +101,11 @@ public class Game extends JFrame implements Runnable{
         }
         g = bs.getDrawGraphics();
         if(camera.getHealth() <= 100){
-            g.drawImage(getSizeOf(0,0,(int)(136*camera.getHealth()), 36, "res/Interface/HealthBar.png"), (int)(screenWidth*.60), (int)(screenHeight*.80), (int)((screenWidth*.3445)*camera.getHealth()), (int)(screenHeight*.075), this);
+//            g.drawImage(getSizeOf(0,0,(int)(136*camera.getHealth()), 36, "res/Interface/HealthBar.png"), (int)(screenWidth*.60), (int)(screenHeight*.80), (int)((screenWidth*.3445)*camera.getHealth()), (int)(screenHeight*.075), this);
         }
         g.drawImage(image, 0, 0, image.getWidth(), image.getHeight(), null);
         g.drawImage(camera.currentWeapon.getImage(), 0, 0, image.getWidth(), (int)(image.getHeight()*.90), null);
+        g.drawImage(getSizeOf(0,0,(int)(136*camera.getHealth()), 36, "res/Interface/HealthBar.png"), (int)(screenWidth*.10), (int)(screenHeight*.90), (int)((screenWidth*.3445)*camera.getHealth()), (int)(screenHeight*.075), null);
         bs.show();
     }
     public void run() {
