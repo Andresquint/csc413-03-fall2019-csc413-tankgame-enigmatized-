@@ -1,15 +1,15 @@
 import UILoadingMenu.SplashPageDriver;
 
-import java.awt.Color;
-import java.awt.Graphics;
+import java.awt.*;
 import java.awt.image.BufferStrategy;
 import java.awt.image.BufferedImage;
 import java.awt.image.DataBufferInt;
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
+import javax.imageio.ImageIO;
 import javax.sound.sampled.*;
-import javax.swing.JFrame;
+import javax.swing.*;
 
 public class Game extends JFrame implements Runnable{
 
@@ -47,6 +47,10 @@ public class Game extends JFrame implements Runnable{
     public static int screenHeight = 480;//480
     public static Graphics g;
     int tickCount=0;
+
+    //Health Bar Assets
+    private ImageIcon HB = new ImageIcon("res/Interface/HealthBarBorder.png");//Creates the HealthBarBorder
+    private Image HealthBarBorder = HB.getImage();
 
 
     public Game() throws InterruptedException, IOException {
@@ -89,13 +93,16 @@ public class Game extends JFrame implements Runnable{
             e.printStackTrace();
         }
     }
-    public void render() {
+    public void render() throws IOException {
         BufferStrategy bs = getBufferStrategy();
         if(bs == null) {
             createBufferStrategy(3);
             return;
         }
         g = bs.getDrawGraphics();
+        if(camera.getHealth() <= 100){
+            g.drawImage(getSizeOf(0,0,(int)(136*camera.getHealth()), 36, "res/Interface/HealthBar.png"), (int)(screenWidth*.60), (int)(screenHeight*.80), (int)((screenWidth*.3445)*camera.getHealth()), (int)(screenHeight*.075), this);
+        }
         g.drawImage(image, 0, 0, image.getWidth(), image.getHeight(), null);
         g.drawImage(camera.currentWeapon.getImage(), 0, 0, image.getWidth(), (int)(image.getHeight()*.90), null);
         bs.show();
@@ -128,7 +135,12 @@ public class Game extends JFrame implements Runnable{
                 delta--;
 
             }
-            render();//displays to the screen unrestricted time
+            try {
+                render();//displays to the screen unrestricted time
+            } catch (IOException e) {
+                System.out.println("Oh shit rendering error, probably a loading image error from health bar");
+                e.printStackTrace();
+            }
         }
     }
     public static void main(String [] args) throws InterruptedException, IOException {
@@ -155,7 +167,24 @@ public class Game extends JFrame implements Runnable{
         }
     }
 
-
+    /**
+     * This is used to cut and/or grab images from a sheet image
+     *
+     * @param startX	The starting x location to begin the cut
+     * @param startY	The starting y location to begin the cut
+     * @param endX	The ending x location of the cut
+     * @param endY	The ending y location of the cut
+     * @param s		The location of the image to be used
+     * @return returns the cropped image that will be used
+     */
+    public BufferedImage getSizeOf(int startX, int startY, int endX, int endY, String s) throws IOException{
+        BufferedImage img = ImageIO.read(new File(s));
+        BufferedImage copyOfImage = new BufferedImage(img.getWidth(this), img.getHeight(this), BufferedImage.TYPE_INT_RGB);
+        BufferedImage toReturn = copyOfImage.getSubimage(startX, startY, endX, endY);
+        Graphics g = toReturn.getGraphics();
+        g.drawImage(img, 0, 0, null);
+        return toReturn;
+    }
 
 
 }

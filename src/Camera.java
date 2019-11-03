@@ -13,6 +13,12 @@ public class Camera implements KeyListener{
     public final double ROTATION_SPEED = .045;
     public boolean shooting=false;
     Weapon currentWeapon;
+
+
+    //Players health and gold
+    private int health;
+    private int gold;
+
     public Camera(double x, double y, double xd, double yd, double xp, double yp) throws IOException {
         xPos = x;
         yPos = y;
@@ -21,6 +27,8 @@ public class Camera implements KeyListener{
         xPlane = xp;
         yPlane = yp;
 
+
+        health=100;
         currentWeapon = loadFist(); //Sets the default weapon
         currentWeapon.animation();
     }
@@ -99,6 +107,15 @@ public class Camera implements KeyListener{
         // TODO Auto-generated method stub
 
     }
+
+    public double getHealth() {
+        double result = ((double)health)/100;
+        if(result < 0){
+            result = 0;
+        }
+        return result;
+    }
+
 
     public void attack() {
         Game.playSound("sound/Shoot.wav");

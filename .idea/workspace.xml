@@ -1,7 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="8d46bb1f-080a-4e39-9486-c031e5c57bac" name="Default Changelist" comment="" />
+    <list default="true" id="8d46bb1f-080a-4e39-9486-c031e5c57bac" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/Interface/Armor Bar.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/Interface/Blank.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/Interface/HealthBar.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/Interface/Interface.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/Interface/deathScreen.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Camera.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Camera.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game.java" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,12 +43,17 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="ProjectId" id="1SF11boorMcwimjGKKrQpnlSL45" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="android.sdk.path" value="$PROJECT_DIR$/../AppData/Local/Android/Sdk" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/sound" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/res" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -52,18 +67,18 @@
     <property name="settings.editor.selected.configurable" value="AndroidSdkUpdater" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\garre\CSC413-game\sound" />
-      <recent name="C:\Users\garre\CSC413-game\res\Weapons" />
-      <recent name="C:\Users\garre\CSC413-game\res" />
-    </key>
-    <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\garre\CSC413-game\res" />
       <recent name="C:\Users\garre\CSC413-game\src" />
       <recent name="C:\Users\garre\CSC413-game" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\garre\CSC413-game\res" />
+      <recent name="C:\Users\garre\CSC413-game\sound" />
+      <recent name="C:\Users\garre\CSC413-game\res\Weapons" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -220,11 +235,25 @@
       <workItem from="1572801421803" duration="1789000" />
       <workItem from="1572806836267" duration="235000" />
       <workItem from="1572807732079" duration="1784000" />
-      <workItem from="1572809541274" duration="255000" />
+      <workItem from="1572809541274" duration="1718000" />
+      <workItem from="1572811562281" duration="1087000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>
