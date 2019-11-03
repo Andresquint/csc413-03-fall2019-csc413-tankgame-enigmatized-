@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="8d46bb1f-080a-4e39-9486-c031e5c57bac" name="Default Changelist" comment="" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand />
+    <select />
+  </component>
+  <component name="FavoritesManager">
+    <favorites_list name="CSC413-game" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Enum" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectId" id="1SF11boorMcwimjGKKrQpnlSL45" />
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="android.sdk.path" value="$PROJECT_DIR$/../AppData/Local/Android/Sdk" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/sound" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.0" />
+    <property name="settings.editor.selected.configurable" value="AndroidSdkUpdater" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\garre\CSC413-game\sound" />
+      <recent name="C:\Users\garre\CSC413-game\res\Weapons" />
+      <recent name="C:\Users\garre\CSC413-game\res" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\garre\CSC413-game\res" />
+      <recent name="C:\Users\garre\CSC413-game\src" />
+      <recent name="C:\Users\garre\CSC413-game" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="Application.Game">
+    <configuration name="Example" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="UILoadingMenu.Example" />
+      <module name="CSC413-game" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Game" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Game" />
+      <module name="CSC413-game" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Main1" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="UI.Main1" />
+      <module name="CSC413-game" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="UILoadingMenu.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Test" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Test" />
+      <module name="CSC413-game" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="main1" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="UILoadingMenu.main1" />
+      <module name="CSC413-game" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="UILoadingMenu.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Game" />
+        <item itemvalue="Application.main1" />
+        <item itemvalue="Application.Example" />
+        <item itemvalue="Application.Main1" />
+        <item itemvalue="Application.Test" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="8d46bb1f-080a-4e39-9486-c031e5c57bac" name="Default Changelist" comment="" />
+      <created>1571144315073</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1571144315073</updated>
+      <workItem from="1571144323459" duration="1601000" />
+      <workItem from="1571158676110" duration="1855000" />
+      <workItem from="1571160816391" duration="69000" />
+      <workItem from="1571161580101" duration="701000" />
+      <workItem from="1571259760514" duration="1772000" />
+      <workItem from="1571261574483" duration="1525000" />
+      <workItem from="1571446586282" duration="1630000" />
+      <workItem from="1571448404342" duration="2838000" />
+      <workItem from="1571452288127" duration="293000" />
+      <workItem from="1571454818552" duration="1156000" />
+      <workItem from="1571457264381" duration="1357000" />
+      <workItem from="1571499306120" duration="607000" />
+      <workItem from="1571513179077" duration="1794000" />
+      <workItem from="1571514996172" duration="1790000" />
+      <workItem from="1571516811872" duration="2310000" />
+      <workItem from="1571519172615" duration="1789000" />
+      <workItem from="1571521116685" duration="2196000" />
+      <workItem from="1571523334222" duration="14000" />
+      <workItem from="1571523464358" duration="1668000" />
+      <workItem from="1571525234639" duration="1786000" />
+      <workItem from="1571527059279" duration="1785000" />
+      <workItem from="1571532888667" duration="1598000" />
+      <workItem from="1571534694664" duration="1832000" />
+      <workItem from="1571666093890" duration="1780000" />
+      <workItem from="1571669084217" duration="1771000" />
+      <workItem from="1571671055813" duration="1186000" />
+      <workItem from="1571678980119" duration="1566000" />
+      <workItem from="1571684654071" duration="1779000" />
+      <workItem from="1571686486705" duration="473000" />
+      <workItem from="1571687128461" duration="1131000" />
+      <workItem from="1571688290643" duration="1780000" />
+      <workItem from="1571690100686" duration="1773000" />
+      <workItem from="1571705814695" duration="1315000" />
+      <workItem from="1571709052114" duration="1346000" />
+      <workItem from="1571741460366" duration="1556000" />
+      <workItem from="1571927231803" duration="1503000" />
+      <workItem from="1571938845291" duration="1755000" />
+      <workItem from="1571940665351" duration="1785000" />
+      <workItem from="1571942477226" duration="1791000" />
+      <workItem from="1571944303397" duration="1795000" />
+      <workItem from="1571946331905" duration="886000" />
+      <workItem from="1571947246878" duration="1786000" />
+      <workItem from="1571949063551" duration="1784000" />
+      <workItem from="1571950877649" duration="1224000" />
+      <workItem from="1571954098560" duration="1782000" />
+      <workItem from="1571956016184" duration="1786000" />
+      <workItem from="1571957838561" duration="1802000" />
+      <workItem from="1572030511878" duration="1779000" />
+      <workItem from="1572032318562" duration="1784000" />
+      <workItem from="1572034155000" duration="680000" />
+      <workItem from="1572054876400" duration="1771000" />
+      <workItem from="1572056693173" duration="1746000" />
+      <workItem from="1572058498735" duration="246000" />
+      <workItem from="1572128698639" duration="1771000" />
+      <workItem from="1572130503956" duration="1802000" />
+      <workItem from="1572132423309" duration="1792000" />
+      <workItem from="1572134247023" duration="2138000" />
+      <workItem from="1572137350336" duration="1790000" />
+      <workItem from="1572139164579" duration="1787000" />
+      <workItem from="1572140976248" duration="1821000" />
+      <workItem from="1572306705344" duration="1784000" />
+      <workItem from="1572308530923" duration="1788000" />
+      <workItem from="1572310474846" duration="1442000" />
+      <workItem from="1572312784744" duration="872000" />
+      <workItem from="1572314962200" duration="52000" />
+      <workItem from="1572372674699" duration="1693000" />
+      <workItem from="1572374400243" duration="849000" />
+      <workItem from="1572378740290" duration="1758000" />
+      <workItem from="1572380575542" duration="1785000" />
+      <workItem from="1572382387613" duration="2010000" />
+      <workItem from="1572799541941" duration="1774000" />
+      <workItem from="1572801421803" duration="1789000" />
+      <workItem from="1572806836267" duration="235000" />
+      <workItem from="1572807732079" duration="1784000" />
+      <workItem from="1572809541274" duration="255000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+</project>
