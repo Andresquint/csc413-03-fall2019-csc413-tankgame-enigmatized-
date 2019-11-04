@@ -21,7 +21,7 @@ public class Entity {
         this.xpos=xpos;
         this.ypos=ypos;
         this.width=0.5;
-        this.speed=60;
+        this.speed=60;//higher number means slower speed, 60 is 1 tile per second
     }
 
 
@@ -34,49 +34,7 @@ public class Entity {
 
 
 
-    protected void persue() {
 
-            if (camera.xPos > this.xpos)
-                dx = (1 / speed);
-            else if (camera.xPos < this.xpos)
-                dx = -(1 / speed);
-            else
-                dx = 0;
-            if (camera.yPos > this.ypos)
-                dy = (1 / speed);
-            else if (camera.yPos < this.ypos)
-                dy = -(1 / speed);
-            else
-                dy = 0;
-                lastPlayerX = camera.xPos;
-                lastPlayerY = camera.yPos;
-
-
-    }
-
-
-    protected void persuePath(){
-
-        if(lastPlayerX>this.xpos)
-            dx=1/speed;
-        else if(lastPlayerX<this.xpos)
-            dx=-1/speed;
-        else
-            dx=0;
-        if(lastPlayerY>this.ypos)
-            dy=1/speed;
-        else if(lastPlayerY<this.ypos)
-            dy=-1/speed;
-        else
-            dy=0;
-        persue();
-    }
-
-    public void updateBehavior() {
-
-        persuePath();
-
-    }
 
 
 

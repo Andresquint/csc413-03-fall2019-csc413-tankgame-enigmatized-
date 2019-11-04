@@ -54,6 +54,7 @@ public class Weapon {
     public int getDamage(){
         return damage;
     }
+
     public BufferedImage animation(){
         currentWeaponFrame = attackAnimation.Animate();
         return currentWeaponFrame;

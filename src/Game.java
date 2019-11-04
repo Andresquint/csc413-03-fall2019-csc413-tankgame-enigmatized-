@@ -21,7 +21,7 @@ public class Game extends JFrame implements Runnable{
     private BufferedImage image;
     public int[] pixels;
     public ArrayList<Texture> textures;
-    public Camera camera;
+    public static Camera camera;
     public Screen screen;
     public static int[][] map =
             {
@@ -104,8 +104,10 @@ public class Game extends JFrame implements Runnable{
 //            g.drawImage(getSizeOf(0,0,(int)(136*camera.getHealth()), 36, "res/Interface/HealthBar.png"), (int)(screenWidth*.60), (int)(screenHeight*.80), (int)((screenWidth*.3445)*camera.getHealth()), (int)(screenHeight*.075), this);
         }
         g.drawImage(image, 0, 0, image.getWidth(), image.getHeight(), null);
-        g.drawImage(camera.currentWeapon.getImage(), 0, 0, image.getWidth(), (int)(image.getHeight()*.90), null);
-        g.drawImage(getSizeOf(0,0,(int)(136*camera.getHealth()), 36, "res/Interface/HealthBar.png"), (int)(screenWidth*.10), (int)(screenHeight*.90), (int)((screenWidth*.3445)*camera.getHealth()), (int)(screenHeight*.075), null);
+        //TOdo
+        //Customize the x and Y for each weapon
+        g.drawImage(camera.currentWeapon.getImage(), -67, 80, image.getWidth(), (int)(image.getHeight()*.95), null);
+        g.drawImage(getSizeOf(0,0,(int)(136*camera.getHealth()), 36, "res/Interface/HealthBar.png"), (int)(screenWidth*.05), (int)(screenHeight*.90), (int)((screenWidth*.3445)*camera.getHealth()), (int)(screenHeight*.075), null);
         bs.show();
     }
     public void run() {
@@ -131,8 +133,24 @@ public class Game extends JFrame implements Runnable{
                 screen.update(camera, pixels);
                 camera.update(map);
 
-//                if(tickCount>200){                 levelInfo.getEnemies().get(1).updateBehavior();}
-//                tickCount++;
+
+                //Update Sprites
+                //BTW a java Stream would likely be better
+
+
+//                for(int spriteNum=0;spriteNum<levelInfo.getEnemiesListSize();spriteNum++){
+//                    levelInfo.getEnemyFromEnemyList(spriteNum).updateBehavior();
+//                    levelInfo.getEnemyFromEnemyList(spriteNum).updatePlayer();
+//                }
+
+
+                //Used for testing Sprite Movement
+                if(tickCount>200){
+                    //levelInfo.getEnemies().get(0).updateBehavior();
+                    levelInfo.getEnemyFromEnemyList(0).updateBehavior();
+                    levelInfo.getEnemyFromEnemyList(0).updatePlayer(map);
+                    System.out.println("Updating Sprite Behavior");}
+                tickCount++;
                 delta--;
 
             }

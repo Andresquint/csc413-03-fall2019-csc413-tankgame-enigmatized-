@@ -5,6 +5,12 @@ public class Enemy extends Entity {
     // coordinages in level position
     double xpos;
     double ypos;
+    //movement change
+    double moveDx;
+    double moveDy;
+
+
+    double health;
 
     //Radius
     double width = 0.5;
@@ -24,6 +30,8 @@ public class Enemy extends Entity {
         this.xpos = xPosition;
         this.ypos = yPosition;
         this.texture = texture;
+        this.health=100;
+
 
 
     }
@@ -74,7 +82,111 @@ public class Enemy extends Entity {
         return texture;
     }
 
+    protected void persue() {
+        System.out.println("1/60 in Java is "+ 1/60); moveDx=1; moveDy=1;
+        System.out.println("1/60 in Java double is "+ (double)1/(double)60);
+        if (Game.camera.xPos > this.xpos) { System.out.println("Line 88 MoveDx:" + moveDx);
+            moveDx = Math.round(1 / speed);
+            System.out.println("Line 90 MoveDx:" + moveDx);
+        }else if (Game.camera.xPos < this.xpos) {
+            moveDx = - Math.round((1 / speed));
+            System.out.println("Line 93 MoveDx:" + moveDx);
+        }else
+            moveDx = 0;
+        if (Game.camera.yPos > this.ypos) {
+            moveDy = Math.round(1 / speed);
+            System.out.println("Line 98 MoveDY:" +moveDy);
+        }else if (Game.camera.yPos < this.ypos) {
+            moveDy = -Math.round(1 / speed);
+            System.out.println("Line 101 MoveDy:" +moveDy);
+        }else
+            moveDy = 0;
+        lastPlayerX = Game.camera.xPos;
+        lastPlayerY = Game.camera.yPos;
+        //persuePath();
 
+    }
+
+
+    protected void persuePath(){
+
+        if(lastPlayerX>this.xpos)
+            moveDx=1/speed;
+        else if(lastPlayerX<this.xpos)
+            moveDx=-1/speed;
+        else
+            moveDx=0;
+        if(lastPlayerY>this.ypos)
+            moveDy=1/speed;
+        else if(lastPlayerY<this.ypos)
+            moveDy=-1/speed;
+        else
+            moveDy=0;
+
+    }
+
+    public void updateBehavior() {
+
+        persue();
+
+    }
+
+    public void updatePlayer(int[][] map) {
+        //xpos++;
+        System.out.println("xpos:" +xpos);
+        System.out.println("ypos:" +ypos);
+        System.out.println("dx: " +dx);
+        //Oh the problem with is dx
+        System.out.println("xpos: "+ xpos+"moveDx"+moveDx+"="+" "+(xpos+moveDx));
+        System.out.println("ypos: "+ ypos+"moveDy"+moveDy+"="+" "+(ypos+Math.round(moveDy)));
+        System.out.println( );
+        if(alive()){
+            try{
+            if(!collision( xpos+moveDx, ypos)){
+                xpos+=moveDx;
+            }
+            }catch (Exception e){
+                System.out.println("#1No bueno map out of bounds error");
+
+                }
+            try{
+            if(!collision(xpos, ypos+moveDy)){
+                ypos+=moveDy;
+            }
+            }catch (Exception e){
+                System.out.println("#2No bueno map out of bounds error");
+
+            }
+        }else{
+            moveDx = 0;
+            moveDy = 0;
+        }
+    }
+
+    public boolean alive() {
+        boolean alive = true;
+        if(health<=0)
+            alive = false;
+        return alive;
+    }
+
+    protected boolean collision(double x, double y){
+        System.out.println("X:"+ x);
+        System.out.println("Y:"+ y);
+        System.out.println("X:(int)"+ (int)x);
+        System.out.println("Y:(int)"+(int) y);
+        System.out.println("X int math round)"+(int) Math.round(x));
+        System.out.println("Y int math round)"+(int) Math.round(y));
+        x=(int) Math.round(x);
+        y=(int) Math.round(y);
+
+        if( (Game.map[(int) x][(int) y] > 0)  ){
+
+            return true;
+        }else{
+            return false;
+        }
+    }
 
 
 }
