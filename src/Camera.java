@@ -118,7 +118,30 @@ public class Camera implements KeyListener{
 
 
     public void attack() {
+
+
         Game.playSound("sound/Shoot.wav");
+
+        for(int i=0; i<Game.levelInfo.getEnemiesListSize(); i++){
+            //Checks to make sure if they are opening a chest or not
+
+                //ensures the player is close enough
+                if(Game.levelInfo.getEnemyFromEnemyList(i).distance<1){
+                    if((Game.levelInfo.getEnemyFromEnemyList(i).centerX>currentWeapon.getLeftRect()) && (Game.levelInfo.getEnemyFromEnemyList(i).centerX<currentWeapon.getRightRect())){
+                        Game.levelInfo.getEnemyFromEnemyList(i).damaged(currentWeapon.getDamage());
+                        RaycastEngine.playSound("sound/ExplosionWarning.wav");
+                    }
+                }
+            else{
+                //Checks range and attacks
+                if(RaycastEngine.currentLevel.level.spriteArray[i].distance<currentWeapon.getWeaponRange()){
+                    if((RaycastEngine.currentLevel.level.spriteArray[i].centerX>currentWeapon.getLeftRect()) && (RaycastEngine.currentLevel.level.spriteArray[i].centerX<currentWeapon.getRightRect())){
+                        RaycastEngine.currentLevel.level.spriteArray[i].damaged(currentWeapon.getDamage());
+                    }
+                }
+            }
+        }
+
     }
 
 

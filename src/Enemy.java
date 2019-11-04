@@ -26,6 +26,10 @@ public class Enemy extends Entity {
 
     private Texture texture;
 
+    //distance?
+    double distance=0;
+    double centerX;
+
     public Enemy(double xPosition, double yPosition, Texture texture) {
         this.xpos = xPosition;
         this.ypos = yPosition;
@@ -186,6 +190,10 @@ public class Enemy extends Entity {
         }else{
             return false;
         }
+    }
+
+    public void damaged(int damageTaken) {
+        health-=damageTaken;
     }
 
 

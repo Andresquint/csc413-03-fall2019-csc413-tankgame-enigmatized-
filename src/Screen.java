@@ -268,6 +268,8 @@ public class Screen {
 
                     u=Math.abs(u);
 
+                    //Used to find center of sprite for Hitting and missing attacks
+                    Game.levelInfo.getEnemyFromEnemyList(0).centerX= (drawStart+drawEnd)/2;
 
                     // if is in front of the camera (yTransformed > 0) but before the wall
                     for (int y = drawStartY; y < drawEndY; y++) {

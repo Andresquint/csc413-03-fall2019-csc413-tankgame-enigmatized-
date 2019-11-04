@@ -3,18 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="8d46bb1f-080a-4e39-9486-c031e5c57bac" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CSC413-game/Camera.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CSC413-game/Camera.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CSC413-game/Enemy.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CSC413-game/Enemy.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CSC413-game/Entity.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CSC413-game/Entity.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CSC413-game/Game.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CSC413-game/Game.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CSC413-game/LevelInfo.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CSC413-game/LevelInfo.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CSC413-game/Weapon.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CSC413-game/Weapon.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Camera.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Camera.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Enemy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Enemy.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/LevelInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/LevelInfo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Weapon.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Weapon.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/READ.me" beforeDir="false" afterPath="$PROJECT_DIR$/src/READ.me" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Screen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Screen.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -57,7 +49,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="android.sdk.path" value="$PROJECT_DIR$/../AppData/Local/Android/Sdk" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/res" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/sound" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -247,7 +239,9 @@
       <workItem from="1572883744355" duration="1416000" />
       <workItem from="1572885555608" duration="1888000" />
       <workItem from="1572887472991" duration="1785000" />
-      <workItem from="1572889291057" duration="1324000" />
+      <workItem from="1572889291057" duration="1979000" />
+      <workItem from="1572894335001" duration="1433000" />
+      <workItem from="1572896150865" duration="247000" />
     </task>
     <task id="LOCAL-00001" summary="Getting a health bar working">
       <created>1572812815636</created>
@@ -263,7 +257,14 @@
       <option name="project" value="LOCAL" />
       <updated>1572813426043</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Right Placement on screen for Health Bar">
+      <created>1572890786455</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1572890786455</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
