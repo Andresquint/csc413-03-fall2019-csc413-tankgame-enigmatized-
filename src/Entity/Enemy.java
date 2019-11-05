@@ -1,5 +1,6 @@
 package Entity;
 
+import java.util.Random;
 import Animation.Texture;
 import Animation.TextureAnimation;
 import Entity.Entity;
@@ -8,7 +9,7 @@ import Health.*;
 import java.io.IOException;
 import Game.*;
 
-public class Enemy extends Entity {
+public class Enemy extends Movers {
 
     // coordinages in level position
     public double xpos;
@@ -17,6 +18,12 @@ public class Enemy extends Entity {
     double moveDx;
     double moveDy;
 
+
+
+
+    //ToDo
+    //Abstract out health, because wall will need health
+    //And you want a way to show dead walls....
     public Health health2;
     double health;
 
@@ -47,6 +54,8 @@ public class Enemy extends Entity {
     protected TextureAnimation walkingAnimation;
     protected TextureAnimation attackAnimation;
     protected TextureAnimation dyingAnimation;
+
+
 
 
     public Enemy(double xPosition, double yPosition, Texture texture) throws IOException {
@@ -107,64 +116,22 @@ public class Enemy extends Entity {
         return texture;
     }
 
-    protected void persue(double delta) {
 
-        if (Game.camera.xPos > this.xpos) { //System.out.println("Line 88 MoveDx:" + moveDx);
-            moveDx = Math.round(1 / speed);
-
-            //moveDx=moveDx*delta;
-           // System.out.println("Line 90 MoveDx:" + moveDx);
-        }else if (Game.camera.xPos < this.xpos) {
-            moveDx = - Math.round((1 / speed));
-           // moveDx=moveDx*delta;
-            //System.out.println("Line 93 MoveDx:" + moveDx);
-        }else
-            moveDx = 0;
-        if (Game.camera.yPos > this.ypos) {
-            moveDy = Math.round(1 / speed);
-           // moveDy=moveDy*delta;
-            //System.out.println("Line 98 MoveDY:" +moveDy);
-        }else if (Game.camera.yPos < this.ypos) {
-            moveDy = -Math.round(1 / speed);
-            //moveDy=moveDy*delta;
-            //System.out.println("Line 101 MoveDy:" +moveDy);
-        }else
-            moveDy = 0;
-        lastPlayerX = Game.camera.xPos;
-        lastPlayerY = Game.camera.yPos;
-        //persuePath();
-
-    }
-
-
-    protected void persuePath(){
-
-        if(lastPlayerX>this.xpos)
-            moveDx=1/speed;
-        else if(lastPlayerX<this.xpos)
-            moveDx=-1/speed;
-        else
-            moveDx=0;
-        if(lastPlayerY>this.ypos)
-            moveDy=1/speed;
-        else if(lastPlayerY<this.ypos)
-            moveDy=-1/speed;
-        else
-            moveDy=0;
-
-    }
 
     public void updateBehavior(double delta) {
         if(alive()) {
-            persue(delta);
+
+           // persue(delta);
+            randomMovement();
             updatePlayer(delta);
+
         }else {
             //Handles the death of the sprite
             moveDy = 0;
             moveDy = 0;
             System.out.println("ARE WE EVER GOING IN HERE?");
             currentAnimation = dyingAnimation;
-            texture=Texture.wood;
+            //texture=Texture.wood;
 
 //            if(!hasGivenLoot){
 //                RaycastEngine.player.addLoot(getLoot());
@@ -199,14 +166,8 @@ public class Enemy extends Entity {
         if(alive()){
             try{
             if(!collision( xpos+2, ypos)){
-//                System.out.println("What Changed");
-//                System.out.println("______________");
-//
-//                System.out.println("new Movex: " +newmoveDx);
-//                System.out.println("xpos BEFORE: "+xpos);
-                xpos+=0.5;
-//                System.out.println("xpos AFTER: "+xpos);
-//                System.out.println("______________");
+
+                xpos+=moveDxx;
 
             }
             }catch (Exception e){
@@ -215,7 +176,7 @@ public class Enemy extends Entity {
                 }
             try{
             if(!collision(xpos, ypos+2)){
-                ypos+=0.5;
+                ypos+=moveDyy;
             }
             }catch (Exception e){
                 System.out.println("#2No bueno map out of bounds error");
@@ -254,7 +215,7 @@ public class Enemy extends Entity {
 
     }
 
-    public void damaged(int damageTaken) {
+    public void damaged(int damageTaken) throws IOException {
 
         System.out.print("Entity.Enemy Health before: "+ this.health);
         this.health-=damageTaken;
@@ -262,6 +223,7 @@ public class Enemy extends Entity {
         System.out.print("Entity.Enemy Health After Hit: "+ this.health);
         if(health<0) {
             texture=Texture.wood;
+            textureChange();
             currentAnimation=dyingAnimation;
             animation();
         }//What should the enemy do? Die?
@@ -288,6 +250,13 @@ public class Enemy extends Entity {
     protected void animation(){
         currentTexture = currentAnimation.Animate();
     }
+
+    public Texture textureChange() throws IOException {
+        //Note, I think the problem is that this isn't thread safe.
+        //Not 100% on how one would best handle that issue?
+        return this.texture= new Texture( "res/3232.png", 16, 16);
+    }
+
 
 
 }

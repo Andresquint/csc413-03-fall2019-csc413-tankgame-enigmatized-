@@ -222,4 +222,15 @@ public class Texture {
         }
     }
 
+//    public static Texture deadterroist;
+//
+//    static {
+//        try {
+//            nothing = new Texture("res/deadterr.png", 16);
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//        }
+//    }
+
+
 }

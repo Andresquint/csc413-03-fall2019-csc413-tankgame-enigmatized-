@@ -161,8 +161,10 @@ public class Game extends JFrame implements Runnable{
 
                 //Used for testing Sprite Movement
                 if(tickCount>25){
+                    double finalDelta = delta;
+                    levelInfo.getEnemies().stream().forEach(s -> s.updateBehavior(finalDelta));
                     //levelInfo.getEnemies().get(0).updateBehavior();
-                    levelInfo.getEnemyFromEnemyList(1).updateBehavior(delta);
+                    //levelInfo.getEnemyFromEnemyList(1).updateBehavior(delta);
                     //levelInfo.getEnemyFromEnemyList(1).updatePlayer(delta);
                     System.out.println("Updating Sprite Behavior");
                 tickCount=0;

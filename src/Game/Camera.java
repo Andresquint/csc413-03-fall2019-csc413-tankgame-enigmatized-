@@ -61,7 +61,11 @@ public class Camera implements KeyListener{
             back = true;
         if((key.getKeyCode() == KeyEvent.VK_SPACE)) {
             shooting = true;
-            attack();
+            try {
+                attack();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
         }
     }
     public void keyReleased(KeyEvent key) {
@@ -121,7 +125,7 @@ public class Camera implements KeyListener{
     }
 
 
-    public void attack() {
+    public void attack() throws IOException {
 
 
         Game.playSound("sound/Shoot.wav");
