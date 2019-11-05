@@ -2,39 +2,48 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8d46bb1f-080a-4e39-9486-c031e5c57bac" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/res/Spider/attackingSpider.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/res/Spider/deadSpider.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/res/Spider/walkingSpider.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Collision/Collision.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Health/Health.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Map.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Terrorist.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CSC413-game/Camera.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CSC413-game/Camera.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CSC413-game/Enemy.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CSC413-game/Enemy.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CSC413-game/Entity.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CSC413-game/Entity.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CSC413-game/Game.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CSC413-game/Game.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CSC413-game/ImageAnimation.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CSC413-game/LevelInfo.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CSC413-game/LevelInfo.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CSC413-game/MapPack.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CSC413-game/Arithmetic.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CSC413-game/Camera.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CSC413-game/Display.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CSC413-game/Enemy.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CSC413-game/Entity.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CSC413-game/Game.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CSC413-game/GameObject.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CSC413-game/LevelInfo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CSC413-game/LoadingOptions.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CSC413-game/MapPackage.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CSC413-game/MathAssist.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/CSC413-game/READ.me" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CSC413-game/READ.me" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CSC413-game/Screen.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CSC413-game/Screen.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CSC413-game/Texture.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CSC413-game/TextureAnimation.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CSC413-game/Weapon.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CSC413-game/Weapon.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Camera.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Camera.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Enemy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Enemy.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ImageAnimation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Animation/ImageAnimation.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/LevelInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/LevelInfo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/MapPack.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MapPack.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CSC413-game/RayHitting.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CSC413-game/Screen.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CSC413-game/ScreenLeftOversForSPriteRendering" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CSC413-game/ScreenLeftOversForSPriteRendering" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CSC413-game/UILoadingMenu/Example.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CSC413-game/UILoadingMenu/Example.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CSC413-game/UILoadingMenu/Test.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CSC413-game/UILoadingMenu/Test.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CSC413-game/UILoadingMenu/main1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CSC413-game/UILoadingMenu/main1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CSC413-game/Weapon.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Camera.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game/Camera.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Display.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/UILoadingMenu/Trashextra/Display.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Enemy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Enemy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Entity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game/Game.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GameObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game/GameObject.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GraphicsHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Animation/Leftovers/GraphicsHelper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Health/Health.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Health/Health.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/LevelInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Mappack/LevelInfo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/LoadingOptions.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Map.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Mappack/Map.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/MapPack.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Mappack/MapPack.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/MapPackage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Mappack/MapPackage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/READ.me" beforeDir="false" afterPath="$PROJECT_DIR$/src/READ.me" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Screen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Screen.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Texture.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Animation/Texture.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/TextureAnimation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Animation/TextureAnimation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Screen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game/Screen.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ScreenLeftOversForSPriteRendering" beforeDir="false" afterPath="$PROJECT_DIR$/src/ScreenLeftOversForSPriteRendering" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Terrorist.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Terrorist.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/UILoadingMenu/Example.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/UILoadingMenu/Example.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/UILoadingMenu/ImageGetting.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/UILoadingMenu/ImageGetting.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Weapon.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Weapon.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/UILoadingMenu/SplashPageDriver.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/UILoadingMenu/SplashPageDriver.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/UILoadingMenu/main1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/UILoadingMenu/main1.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Weapon.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Weapons/Weapon.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -91,18 +100,20 @@
     <property name="settings.editor.selected.configurable" value="AndroidSdkUpdater" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\garre\CSC413-game\src\Mappack" />
+      <recent name="C:\Users\garre\CSC413-game\src\UILoadingMenu" />
       <recent name="C:\Users\garre\CSC413-game\res" />
-      <recent name="C:\Users\garre\CSC413-game\sound" />
-      <recent name="C:\Users\garre\CSC413-game\res\Weapons" />
+      <recent name="C:\Users\garre\CSC413-game\src" />
+      <recent name="C:\Users\garre\CSC413-game" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="" />
     </key>
-    <key name="MoveFile.RECENT_KEYS">
+    <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\garre\CSC413-game\res" />
-      <recent name="C:\Users\garre\CSC413-game\src" />
-      <recent name="C:\Users\garre\CSC413-game" />
+      <recent name="C:\Users\garre\CSC413-game\sound" />
+      <recent name="C:\Users\garre\CSC413-game\res\Weapons" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -126,7 +137,7 @@
       </method>
     </configuration>
     <configuration name="Game" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Game" />
+      <option name="MAIN_CLASS_NAME" value="Game.Game" />
       <module name="CSC413-game" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -137,7 +148,7 @@
       <module name="CSC413-game" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="UILoadingMenu.*" />
+          <option name="PATTERN" value="Mappack.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -157,7 +168,7 @@
       <module name="CSC413-game" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="UILoadingMenu.*" />
+          <option name="PATTERN" value="Mappack.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -281,6 +292,7 @@
       <workItem from="1572965550082" duration="1451000" />
       <workItem from="1572967354394" duration="1580000" />
       <workItem from="1572969482987" duration="420000" />
+      <workItem from="1572974629043" duration="1326000" />
     </task>
     <task id="LOCAL-00001" summary="Getting a health bar working">
       <created>1572812815636</created>
@@ -310,7 +322,14 @@
       <option name="project" value="LOCAL" />
       <updated>1572896451284</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Right Placement on screen for Health Bar">
+      <created>1572974730042</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1572974730042</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

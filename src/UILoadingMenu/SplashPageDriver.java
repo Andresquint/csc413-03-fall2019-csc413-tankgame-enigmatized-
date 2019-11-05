@@ -63,7 +63,7 @@ public class SplashPageDriver {
         jmFile.add(jmiExit);
         jmb.add(jmFile);
         f.setJMenuBar(jmb);
-        JButton startGameButton = new JButton("Start Game");
+        JButton startGameButton = new JButton("Start Game.Game");
         JButton exitGameButton = new JButton("Exit");
         f.add(startGameButton);
         f.add(exitGameButton);

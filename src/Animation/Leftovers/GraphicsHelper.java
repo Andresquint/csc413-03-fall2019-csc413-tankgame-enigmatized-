@@ -1,3 +1,5 @@
+package Animation.Leftovers;
+
 import java.awt.Color;
 
 public class GraphicsHelper {

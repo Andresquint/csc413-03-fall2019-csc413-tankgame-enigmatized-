@@ -1,9 +1,11 @@
+package Mappack;
+
 public class Map {
 
 
     public int [][] map;
 
-    Map(int[][] map){
+    public Map(int[][] map){
         this.map=map;
     }
 

@@ -10,7 +10,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * <strong>Project:</strong> Game <br>
+ * <strong>Project:</strong> Game.Game <br>
  * <strong>File:</strong> Animation.Texture.java
  *
  * @author <a href = "http://redthirddivision.com/team/blp"> Matthew Rogers</a>

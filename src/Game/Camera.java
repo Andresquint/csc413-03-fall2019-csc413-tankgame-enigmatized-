@@ -1,3 +1,7 @@
+package Game;
+
+import Game.Game;
+import Weapons.Weapon;
 
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
@@ -42,7 +46,7 @@ public class Camera implements KeyListener{
     private Weapon loadFist() throws IOException {
         //Initializes all the weapons below
         return new Weapon("res/Weapons/crossbow.png", 1,(int)Math.round(.20*Game.screenWidth), (int)Math.round(.80*Game.screenWidth), 50, 10.0);
-        //Weapon fist = new Weapon("res/Weapons/fist.png", 2,(int)Math.round(.33*Game.screenWidth), (int)Math.round(.66*Game.screenWidth), 15, 2);
+        //Weapons.Weapon fist = new Weapons.Weapon("res/Weapons/fist.png", 2,(int)Math.round(.33*Game.Game.screenWidth), (int)Math.round(.66*Game.Game.screenWidth), 15, 2);
     }
 
 
@@ -131,7 +135,7 @@ public class Camera implements KeyListener{
                         System.out.println("Do we get herer !!!!!!!!!!!!!!!!!!!!!!!!");
                         Game.levelInfo.getEnemyFromEnemyList(i).damaged(currentWeapon.getDamage());
 
-                       // Game.playSound("sound/ExplosionWarning.wav");
+                       // Game.Game.playSound("sound/ExplosionWarning.wav");
                     }
                 }
             else{

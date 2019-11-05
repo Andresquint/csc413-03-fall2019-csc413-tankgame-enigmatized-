@@ -52,7 +52,7 @@ public class main1 extends Application{
                 new MenuItem("Play Space_Ship"),
                 new MenuItem("NUll Button"),
                 new MenuItem("Credits"),
-                new MenuItem("Exit Game"));
+                new MenuItem("Exit Game.Game"));
 
         vbox.setTranslateX(100);
         vbox.setTranslateY(300);

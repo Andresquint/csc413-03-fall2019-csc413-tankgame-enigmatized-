@@ -1,5 +1,8 @@
+package Entity;
+
 import Animation.Texture;
 import Animation.TextureAnimation;
+import Entity.Enemy;
 
 import java.io.IOException;
 

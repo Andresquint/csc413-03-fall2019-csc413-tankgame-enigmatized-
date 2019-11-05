@@ -1,4 +1,7 @@
+package Game;
+
 import Animation.Texture;
+import Entity.Entity;
 import UILoadingMenu.SplashPageDriver;
 
 import java.awt.*;
@@ -11,6 +14,11 @@ import java.util.ArrayList;
 import javax.imageio.ImageIO;
 import javax.sound.sampled.*;
 import javax.swing.*;
+
+
+import Mappack.*;
+import Game.Screen;
+
 
 public class Game extends JFrame implements Runnable{
 

@@ -1,14 +1,18 @@
+package Entity;
+
 import Animation.Texture;
 import Animation.TextureAnimation;
+import Entity.Entity;
 import Health.*;
 
 import java.io.IOException;
+import Game.*;
 
 public class Enemy extends Entity {
 
     // coordinages in level position
-    double xpos;
-    double ypos;
+    public double xpos;
+    public double ypos;
     //movement change
     double moveDx;
     double moveDy;
@@ -31,8 +35,8 @@ public class Enemy extends Entity {
     private Texture texture;
 
     //distance?
-    double distance=0;
-    double centerX;
+    public double distance=0;
+    public double centerX;
 
     //Make this array
     //Use states
@@ -240,7 +244,7 @@ public class Enemy extends Entity {
 //        x=(int) Math.round(x);
 //        y=(int) Math.round(y);
 //
-//        if( (Game.map[(int) x][(int) y] > 0)  ){
+//        if( (Game.Game.map[(int) x][(int) y] > 0)  ){
 //
 //            return true;
 //        }else{
@@ -252,10 +256,10 @@ public class Enemy extends Entity {
 
     public void damaged(int damageTaken) {
 
-        System.out.print("Enemy Health before: "+ this.health);
+        System.out.print("Entity.Enemy Health before: "+ this.health);
         this.health-=damageTaken;
         this.health2.damaged(damageTaken);
-        System.out.print("Enemy Health After Hit: "+ this.health);
+        System.out.print("Entity.Enemy Health After Hit: "+ this.health);
         if(health<0) {
             texture=Texture.wood;
             currentAnimation=dyingAnimation;

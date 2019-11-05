@@ -1,5 +1,5 @@
-import java.lang.Math.*;
-
+package Entity;
+import Game.*;
 
 
 
@@ -17,7 +17,7 @@ public class Entity {
     protected double speed;//higher number means slower speed, 60 is 1 tile per second
     protected double lastPlayerX, lastPlayerY;
 
-    Entity(double xpos, double ypos){
+    public Entity(double xpos, double ypos){
         this.xpos=xpos;
         this.ypos=ypos;
         this.width=0.5;
@@ -80,7 +80,7 @@ public class Entity {
 
     RayHitting rayhittingLambda = (int a, int b, int c, int x, int y, int radius) ->(int) ((Math.abs(a * x + b * y + c)) /  Math.sqrt(a * a + b * b));
 
-//    public int checksRayHitting(RayHitting circletouching){
+//    public int checksRayHitting(Entity.RayHitting circletouching){
 //        if (circletouching.rayhittingLambda( a, b,  c, xpos,  ypos, width) > width){
 //            System.out.println("Touch");
 //            return 1;

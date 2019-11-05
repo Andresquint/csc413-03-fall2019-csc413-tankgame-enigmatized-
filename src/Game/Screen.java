@@ -1,4 +1,9 @@
+package Game;
+
 import Animation.Texture;
+import Entity.Enemy;
+import Game.Game;
+import Mappack.Map;
 import RayCasting.MathAssist;
 
 import java.util.ArrayList;
@@ -30,9 +35,9 @@ public class Screen {
 
 
 
-//    public void tick(Camera camera, double frameTime) {
+//    public void tick(Game.Camera camera, double frameTime) {
 //
-//        camera.update(Game.levelInfo, frameTime);
+//        camera.update(Game.Game.levelInfo, frameTime);
 //
 //
 //        // look up/down amount same for every pixel
@@ -47,7 +52,7 @@ public class Screen {
 
     public Screen(Map m, int mapW, int mapH, ArrayList<Texture> tex, int w, int h) {
         map = m;
-        mapWidth = mapW;//Will equal 15, related to Matrix in Game.java
+        mapWidth = mapW;//Will equal 15, related to Matrix in Game.Game.java
         mapHeight = mapH;
         textures = tex;///Is this really the best way to deal with this?
         //Meaning having enemies as in a array list and passing it through the screen constructor?
@@ -96,8 +101,8 @@ public class Screen {
             double rayDirY = camera.yDir + camera.yPlane * cameraX;
 
 
-            //Map position
-            //Map position means within the array of MAP
+            //Mappack.Map position
+            //Mappack.Map position means within the array of MAP
             //Confusion: how is camerea able to give its map array cordinates?
             //AKA how are they related
             mapX = (int) camera.xPos;

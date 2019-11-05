@@ -1,3 +1,5 @@
+package UILoadingMenu.Trashextra;
+
 import java.awt.Canvas;
 import java.awt.Color;
 import java.awt.Dimension;
@@ -12,7 +14,7 @@ public class Display {
     protected static int height = ((int) screenSize.getHeight())/2;
     protected static int width = ((int) screenSize.getWidth())/2;
 
-    // Game Title
+    // Game.Game Title
     protected static String title = "Fight ZOne";
 
     // Canvas and JFrame

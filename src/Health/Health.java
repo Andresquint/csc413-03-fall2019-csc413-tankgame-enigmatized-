@@ -15,9 +15,9 @@ public class Health {
 
     public void damaged(int damageTaken) {
 
-        System.out.print("Enemy Health before: "+ this.health);
+        System.out.print("Entity.Enemy Health before: "+ this.health);
         this.health-=damageTaken;
-        System.out.print("Enemy Health After Hit: "+ this.health);
+        System.out.print("Entity.Enemy Health After Hit: "+ this.health);
         if(health<0) {
 
 

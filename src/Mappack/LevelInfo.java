@@ -1,4 +1,7 @@
+package Mappack;
+
 import Animation.Texture;
+import Entity.Enemy;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -8,7 +11,7 @@ public class LevelInfo {
 
     private List<Enemy> enemiesList = new ArrayList<>();
 
-    LevelInfo() throws IOException {
+    public LevelInfo() throws IOException {
 
         this.enemiesList.add(new Enemy(8, 8, new Texture("res/terrr.png", 64, 64)));
         //Animation.Texture has to be 64

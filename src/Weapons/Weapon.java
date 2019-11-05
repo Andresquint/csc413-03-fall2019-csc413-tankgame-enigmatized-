@@ -1,3 +1,5 @@
+package Weapons;
+
 import Animation.ImageAnimation;
 
 import java.awt.image.BufferedImage;
@@ -16,7 +18,7 @@ public class Weapon {
     private int damage;
     private double weaponRange;
     /**
-     * Creates a Weapon object and initializes their animations,
+     * Creates a Weapons.Weapon object and initializes their animations,
      * reticles, damage, and their range.
      *
  //    * @param weaponImage	The image of the weapon

@@ -12,7 +12,7 @@ public class Example extends JFrame {
     static Button[] buttons = new Button[2];
 
     public static void main(String[] args) {
-        JButton startGameButton = new JButton("Start Game");
+        JButton startGameButton = new JButton("Start Game.Game");
         JButton exitGameButton = new JButton("Exit");
         startGameButton.addActionListener(new ActionListener() {
             @Override

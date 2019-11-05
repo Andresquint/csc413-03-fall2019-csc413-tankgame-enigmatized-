@@ -1,3 +1,7 @@
+package Game;
+
+import Game.Game;
+
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
