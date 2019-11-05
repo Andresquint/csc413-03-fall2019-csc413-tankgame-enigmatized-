@@ -11,7 +11,7 @@ import java.util.Map;
 
 /**
  * <strong>Project:</strong> Game <br>
- * <strong>File:</strong> Texture.java
+ * <strong>File:</strong> Animation.Texture.java
  *
  * @author <a href = "http://redthirddivision.com/team/blp"> Matthew Rogers</a>
  */

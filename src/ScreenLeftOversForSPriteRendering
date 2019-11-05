@@ -10,7 +10,7 @@
 //
 //
 //                // calculate distance between sprinte and camera
-//                // Game.levelInfo.getEnemies().forEach(s -> s.distanceToCamera = MathAssist.distanceBetweenPoints(camera.xPos, camera.yPos, s.xpos, s.ypos));
+//                // Game.levelInfo.getEnemies().forEach(s -> s.distanceToCamera = RayCasting.MathAssist.distanceBetweenPoints(camera.xPos, camera.yPos, s.xpos, s.ypos));
 //
 //
 //                // iterate over every sprite
@@ -19,7 +19,7 @@
 //                    double hitx = enemy.getDistFromLine(camera.xPos, camera.yPos, rayX, rayY);
 //
 //                    if (hitx < enemy.width) {
-//                        double perpEnemyDist = MathAssist.distanceBetweenPoints(camera.xPos, camera.yPos, enemy.xpos, enemy.ypos);
+//                        double perpEnemyDist = RayCasting.MathAssist.distanceBetweenPoints(camera.xPos, camera.yPos, enemy.xpos, enemy.ypos);
 //                        perpEnemyDist=Math.abs(perpEnemyDist);
 //
 //                        int enemyHeight;
@@ -66,7 +66,7 @@
 //            double spriteY = enemy.ypos-camera.yPos;
 //
 //            // calculate distance between sprinte and camera
-//            // Game.levelInfo.getEnemies().forEach(s -> s.distanceToCamera = MathAssist.distanceBetweenPoints(camera.xPos, camera.yPos, s.xpos, s.ypos));
+//            // Game.levelInfo.getEnemies().forEach(s -> s.distanceToCamera = RayCasting.MathAssist.distanceBetweenPoints(camera.xPos, camera.yPos, s.xpos, s.ypos));
 //
 //            double invDet = 1.0/(camera.xPos *camera.yDir-camera.xDir*camera.yPos);
 //
@@ -87,7 +87,7 @@
 //
 //
 //                if (hitx < enemy.width) {
-//                    double perpEnemyDist = MathAssist.distanceBetweenPoints(camera.xPos, camera.yPos, enemy.xpos, enemy.ypos);
+//                    double perpEnemyDist = RayCasting.MathAssist.distanceBetweenPoints(camera.xPos, camera.yPos, enemy.xpos, enemy.ypos);
 //                    perpEnemyDist=Math.abs(perpEnemyDist);
 //
 //                    int enemyHeight;

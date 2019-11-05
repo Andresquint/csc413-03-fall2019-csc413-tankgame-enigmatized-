@@ -1,3 +1,4 @@
+import Animation.Texture;
 import UILoadingMenu.SplashPageDriver;
 
 import java.awt.*;
@@ -23,6 +24,7 @@ public class Game extends JFrame implements Runnable{
     public ArrayList<Texture> textures;
     public static Camera camera;
     public Screen screen;
+    public static Map level;
     public static int[][] map =
             {
                     {1,1,1,1,1,1,1,1,2,2,2,2,2,2,2},
@@ -70,7 +72,8 @@ public class Game extends JFrame implements Runnable{
         camera = new Camera(4.5, 4.5, 1, 0, 0, -.66);
         enemies= new ArrayList<>();
         enemies.add(new Entity(3.5, 3.5));
-        screen = new Screen(map, mapWidth, mapHeight, textures, 640, 480);
+        level = new Map(map);
+        screen = new Screen(level, mapWidth, mapHeight, textures, 640, 480);
         addKeyListener(camera);
         setSize(640, 480);
         setResizable(false);
@@ -108,6 +111,10 @@ public class Game extends JFrame implements Runnable{
         //Customize the x and Y for each weapon
         g.drawImage(camera.currentWeapon.getImage(), -67, 80, image.getWidth(), (int)(image.getHeight()*.95), null);
         g.drawImage(getSizeOf(0,0,(int)(136*camera.getHealth()), 36, "res/Interface/HealthBar.png"), (int)(screenWidth*.05), (int)(screenHeight*.90), (int)((screenWidth*.3445)*camera.getHealth()), (int)(screenHeight*.075), null);
+        //
+        //HealthBarFor enemy
+        //g.drawImage(getSizeOf(0,0,(int)(136*camera.getHealth()), 36, "res/Interface/HealthBar.png"), (int)(screenWidth*.75), (int)(screenHeight*.90), (int)((screenWidth*.3445)*camera.getHealth()), (int)(screenHeight*.075), null);
+        //
         bs.show();
     }
     public void run() {
@@ -145,11 +152,14 @@ public class Game extends JFrame implements Runnable{
 
 
                 //Used for testing Sprite Movement
-                if(tickCount>200){
+                if(tickCount>25){
                     //levelInfo.getEnemies().get(0).updateBehavior();
-                    levelInfo.getEnemyFromEnemyList(0).updateBehavior();
-                    levelInfo.getEnemyFromEnemyList(0).updatePlayer(map);
-                    System.out.println("Updating Sprite Behavior");}
+                    levelInfo.getEnemyFromEnemyList(1).updateBehavior(delta);
+                    //levelInfo.getEnemyFromEnemyList(1).updatePlayer(delta);
+                    System.out.println("Updating Sprite Behavior");
+                tickCount=0;
+                }
+
                 tickCount++;
                 delta--;
 

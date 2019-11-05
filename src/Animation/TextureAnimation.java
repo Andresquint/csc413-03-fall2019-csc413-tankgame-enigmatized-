@@ -1,10 +1,9 @@
-import java.util.ArrayList;
-import java.awt.image.BufferedImage;
-import java.io.File;
+package Animation;
+
+import Animation.Texture;
+
 import java.io.IOException;
-
-import javax.imageio.*;
-
+import java.util.ArrayList;
 /**
  * Object that stores an image with a given filname
  * and creates a "flipbook" effect via a creation of
@@ -15,7 +14,7 @@ import javax.imageio.*;
  * @author Michael Mueller, Paul Coen, Dakota Oria
  *
  */
-public class ImageAnimation {
+public class TextureAnimation {
     //Default and custom delays between frames
     final static int FRAME_DELAY = 5;
     int frameDelay;
@@ -23,16 +22,13 @@ public class ImageAnimation {
 
     //current frame of animation and animation frames
     int currentFrame;
-    ArrayList<BufferedImage> animationFrames;
+    ArrayList<Texture> animationFrames;
 
     //Name of animation spreadsheet
     String filename;
 
     //Whether or not to loop the animation
     boolean looping;
-
-    //The height of the cell
-    int height;
 
     /**
      * Creates an animation with a default frame delay,
@@ -41,9 +37,8 @@ public class ImageAnimation {
      *
      * @param s Name of file
      * @param frameNum number of frames
-     * @throws IOException
      */
-    public ImageAnimation(String s, int frameNum) throws IOException{
+    public TextureAnimation(String s, int frameNum) throws IOException {
         this(s, frameNum, FRAME_DELAY);
     }
 
@@ -55,10 +50,9 @@ public class ImageAnimation {
      * @param s Name of file
      * @param frameNum Number of frames
      * @param frameDelay Amount of time between frames
-     * @throws IOException
      */
-    public ImageAnimation(String s, int frameNum, int frameDelay) throws IOException{
-        this(s, frameNum, frameDelay, false);//assumes that the animation is loopable
+    public TextureAnimation(String s, int frameNum, int frameDelay) throws IOException {
+        this(s, frameNum, frameDelay, true);//assumes that the animation is loopable
     }
 
     /**
@@ -71,20 +65,17 @@ public class ImageAnimation {
      * @param frameNum Number of frames
      * @param frameDelay Amount of time between frames
      * @param loopable Specifies if animation is loopable
-     * @throws IOException
      */
-    public ImageAnimation(String s, int frameNum, int frameDelay, boolean loopable) throws IOException{
-        BufferedImage cellImage = ImageIO.read(new File(s));
-
-        height = cellImage.getHeight()/frameNum;
+    public TextureAnimation(String s, int frameNum, int frameDelay, boolean loopable) throws IOException {
         this.frameDelay = frameDelay;
         looping = loopable;
         animationFrames = new ArrayList<>();
         currentFrame = 0;
         for(int i = 0; i < frameNum; i++){
-            animationFrames.add(cellImage.getSubimage(0, i*height, cellImage.getWidth(), height));
+            Texture temp = new Texture(s, 64, 0, (i*64));
+            animationFrames.add(temp);
         }
-        //System.out.println("Loaded Images for: " + s);
+        //System.out.println("Loaded Textures for: " + s);
     }
 
     /**
@@ -94,9 +85,9 @@ public class ImageAnimation {
      *
      * @return Current frame of animation.
      */
-    public BufferedImage Animate(){
+    public Texture Animate(){
         ensureCurrentFrame();
-        BufferedImage result = animationFrames.get(currentFrame);
+        Texture result = animationFrames.get(currentFrame);
         if(timer%frameDelay == 0){
             timer = 1;
             currentFrame++;
@@ -127,9 +118,5 @@ public class ImageAnimation {
             return currentFrame == animationFrames.size();
         else
             return timer%frameDelay==0;
-    }
-
-    public void resetAnimation(){
-        currentFrame = 0;
     }
 }

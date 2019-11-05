@@ -1,10 +1,14 @@
+import Animation.Texture;
+import RayCasting.MathAssist;
+
 import java.util.ArrayList;
 import java.awt.Color;
 
 //https://github.com/mmueller536/Dungeon-of-the-Eternal-Guardian/tree/29972c9b85064e75153ac80f683f80a092607e50
 
 public class Screen {
-    public int[][] map;
+    //public int[][] map;
+    public Map map;
     public int mapWidth, mapHeight, width, height;
     public ArrayList<Texture> textures;  //This will be used for enemies later
 
@@ -25,6 +29,7 @@ public class Screen {
     int lineHeightFORSPRITE;
 
 
+
 //    public void tick(Camera camera, double frameTime) {
 //
 //        camera.update(Game.levelInfo, frameTime);
@@ -40,7 +45,7 @@ public class Screen {
 //        }
 //    }
 
-    public Screen(int[][] m, int mapW, int mapH, ArrayList<Texture> tex, int w, int h) {
+    public Screen(Map m, int mapW, int mapH, ArrayList<Texture> tex, int w, int h) {
         map = m;
         mapWidth = mapW;//Will equal 15, related to Matrix in Game.java
         mapHeight = mapH;
@@ -156,7 +161,7 @@ public class Screen {
                 }
                 //Check if ray has hit a wall
                 //System.out.println(mapX + ", " + mapY + ", " + map[mapX][mapY]);
-                if (map[mapX][mapY] > 0) hit = true;
+                if (map.map[mapX][mapY] > 0) hit = true;
             }
 
             //Calculate distance to the point of impact
@@ -177,7 +182,7 @@ public class Screen {
             if (drawEnd >= height)
                 drawEnd = height - 1;
             //add a texture
-            int texNum = map[mapX][mapY] - 1;
+            int texNum = map.map[mapX][mapY] - 1;
             double wallDeltaX;
             double wallDeltaY;
             double wallX;//Exact position of where wall was hit
@@ -241,7 +246,7 @@ public class Screen {
 //                    int drawStartY = clipVertically(-spriteHeight / 2 + (height) / 2);
 //                    int drawEndY = clipVertically(spriteHeight / 2 + (height) / 2);
 
-                    //Texture texture = enemy.getTexture();
+                    //Animation.Texture texture = enemy.getTexture();
 
                     // draw the sprite
                     Texture texture = enemy.getTexture();
@@ -261,6 +266,7 @@ public class Screen {
                     int u;
                     //left side
                     if (hitside < 0) {
+                       // System.out.print(texture.getWidth());
                         u = (int) ((0.5 - hitDist) * texture.getWidth());
                     } else {//Right side
                         u = (int) ((0.5 + hitDist) * texture.getWidth());
@@ -288,12 +294,10 @@ public class Screen {
 
                             //Weird the second time I tried I now get it to crash.
 
-                            if (texel != Color.BLACK.getRGB()) {
+                            if (texel != Color.WHITE.getRGB()) {
                                 // apply effects if required
                                 int y1 = clipVertically(y + verticalDisplace);
                                 pixels[y1 * width + x] = texel;
-                            } else {
-                                System.out.println("BLACK?!");
                             }
                             zBuffer[x] = perpEnemyDist;
                         }

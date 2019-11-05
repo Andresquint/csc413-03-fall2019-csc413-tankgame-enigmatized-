@@ -1,3 +1,5 @@
+package Animation;
+
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
@@ -29,6 +31,23 @@ public class Texture {
 
     }
 
+
+    public Texture(String location, int width, int height) throws IOException {
+        //BufferedImage image = ImageIO.read(new File(location));
+        loc = location;
+        SIZE=width;
+
+        this.pixels=new int[SIZE * height];
+        load();
+        //this.pixels= image.getRGB(0, 0, image.getWidth(), image.getHeight(), null, 0, image.getWidth());
+        this.width = image.getWidth();
+        this.height = image.getHeight();
+        //load();
+
+    }
+
+
+
     /**
      * 	For when the image is provided and cropping is needed
      * @param image	the image to me cropped
@@ -43,6 +62,9 @@ public class Texture {
         height= SIZE;
         image.getRGB(startX, startY, width, height, pixels, 0, width);
     }
+
+
+
 
 
     /**
@@ -116,7 +138,9 @@ public class Texture {
     }
 
     public int getWidth() {
-        return width;
+/*        if(width>64) return 64;
+        else*/
+            return width;
     }
 
     public int getHeight() {
@@ -129,10 +153,10 @@ public class Texture {
     //TODO
     //Final phase=>grace stage:
     //Make a static blog instead as exemplified in class
-//    public static Texture wood = new Texture("res/wood.png", 64);
-//    public static Texture brick = new Texture("res/redbrick.png", 64);
-//    public static Texture bluestone = new Texture("res/bluestone.png", 64);
-//    public static Texture stone = new Texture("res/greystone.png", 64);
+//    public static Animation.Texture wood = new Animation.Texture("res/wood.png", 64);
+//    public static Animation.Texture brick = new Animation.Texture("res/redbrick.png", 64);
+//    public static Animation.Texture bluestone = new Animation.Texture("res/bluestone.png", 64);
+//    public static Animation.Texture stone = new Animation.Texture("res/greystone.png", 64);
 
 
     public static Texture wood;
@@ -175,8 +199,8 @@ public class Texture {
             e.printStackTrace();
         }
     }
-    //public static Texture enemySimple = new Texture("res/enemy.png", 64);
-    //public static Texture loadingPageBackGround = new Texture("res/wood.png", 64);
+    //public static Animation.Texture enemySimple = new Animation.Texture("res/enemy.png", 64);
+    //public static Animation.Texture loadingPageBackGround = new Animation.Texture("res/wood.png", 64);
 
     public static Texture nothing;
 
@@ -188,6 +212,14 @@ public class Texture {
         }
     }
 
+    public static Texture terroist;
 
+    static {
+        try {
+            nothing = new Texture("res/terr.png", 64);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 
 }

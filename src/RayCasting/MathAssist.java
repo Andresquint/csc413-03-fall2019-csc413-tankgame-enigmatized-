@@ -1,3 +1,5 @@
+package RayCasting;
+
 public class MathAssist {
 
     /**

@@ -1,3 +1,6 @@
+import Animation.Texture;
+
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -5,10 +8,13 @@ public class LevelInfo {
 
     private List<Enemy> enemiesList = new ArrayList<>();
 
-    LevelInfo() {
+    LevelInfo() throws IOException {
 
-        this.enemiesList.add(new Enemy(8, 8, Texture.stone));
-        this.enemiesList.add(new Enemy(10, 10, Texture.wood));
+        this.enemiesList.add(new Enemy(8, 8, new Texture("res/terrr.png", 64, 64)));
+        //Animation.Texture has to be 64
+        //128 Works to?
+        this.enemiesList.add(new Enemy(10, 10, new Texture("res/terrr.png", 64, 64)));
+
 
     }
 

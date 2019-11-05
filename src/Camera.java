@@ -41,7 +41,7 @@ public class Camera implements KeyListener{
 
     private Weapon loadFist() throws IOException {
         //Initializes all the weapons below
-        return new Weapon("res/Weapons/crossbow.png", 1,(int)Math.round(.20*Game.screenWidth), (int)Math.round(.80*Game.screenWidth), 50, 5.0);
+        return new Weapon("res/Weapons/crossbow.png", 1,(int)Math.round(.20*Game.screenWidth), (int)Math.round(.80*Game.screenWidth), 50, 10.0);
         //Weapon fist = new Weapon("res/Weapons/fist.png", 2,(int)Math.round(.33*Game.screenWidth), (int)Math.round(.66*Game.screenWidth), 15, 2);
     }
 
@@ -128,15 +128,17 @@ public class Camera implements KeyListener{
                 //ensures the player is close enough
                 if(Game.levelInfo.getEnemyFromEnemyList(i).distance<1){
                     if((Game.levelInfo.getEnemyFromEnemyList(i).centerX>currentWeapon.getLeftRect()) && (Game.levelInfo.getEnemyFromEnemyList(i).centerX<currentWeapon.getRightRect())){
+                        System.out.println("Do we get herer !!!!!!!!!!!!!!!!!!!!!!!!");
                         Game.levelInfo.getEnemyFromEnemyList(i).damaged(currentWeapon.getDamage());
-                        RaycastEngine.playSound("sound/ExplosionWarning.wav");
+
+                       // Game.playSound("sound/ExplosionWarning.wav");
                     }
                 }
             else{
                 //Checks range and attacks
-                if(RaycastEngine.currentLevel.level.spriteArray[i].distance<currentWeapon.getWeaponRange()){
-                    if((RaycastEngine.currentLevel.level.spriteArray[i].centerX>currentWeapon.getLeftRect()) && (RaycastEngine.currentLevel.level.spriteArray[i].centerX<currentWeapon.getRightRect())){
-                        RaycastEngine.currentLevel.level.spriteArray[i].damaged(currentWeapon.getDamage());
+                if(Game.levelInfo.getEnemyFromEnemyList(i).distance<currentWeapon.getWeaponRange()){
+                    if((Game.levelInfo.getEnemyFromEnemyList(i).centerX>currentWeapon.getLeftRect()) && (Game.levelInfo.getEnemyFromEnemyList(i).centerX<currentWeapon.getRightRect())){
+                        Game.levelInfo.getEnemyFromEnemyList(i).damaged(currentWeapon.getDamage());
                     }
                 }
             }

@@ -9,7 +9,7 @@ public class Entity {
     Camera camera;
     //HealthStats healthStats= new HealthStats();
     public double width;
-    // Texture face = new Texture("res/enemy.png", 64);
+    // Animation.Texture face = new Animation.Texture("res/enemy.png", 64);
     public double xpos;	//the x location of the sprite
     protected double dx;	//change in x location
     public double ypos; 	//the y location of the sprite
@@ -21,7 +21,7 @@ public class Entity {
         this.xpos=xpos;
         this.ypos=ypos;
         this.width=0.5;
-        this.speed=60;//higher number means slower speed, 60 is 1 tile per second
+        this.speed=6;//higher number means slower speed, 60 is 1 tile per frame? second?
     }
 
 

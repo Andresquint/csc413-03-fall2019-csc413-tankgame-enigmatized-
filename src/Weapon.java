@@ -1,4 +1,5 @@
-import java.awt.Image;
+import Animation.ImageAnimation;
+
 import java.awt.image.BufferedImage;
 import java.io.IOException;
 

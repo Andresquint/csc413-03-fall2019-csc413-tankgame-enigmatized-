@@ -1,5 +1,5 @@
-public enum MapPack {
-//    public static int[][] map =
+//public enum MapPack {
+//    public static int[][] level1 =
 //            {
 //                    {1,1,1,1,1,1,1,1,2,2,2,2,2,2,2},
 //                    {1,0,0,0,0,0,0,0,2,0,0,0,0,0,2},
@@ -17,7 +17,8 @@ public enum MapPack {
 //                    {1,0,0,0,0,0,0,0,0,0,0,0,0,0,4},
 //                    {1,1,1,1,1,1,1,4,4,4,4,4,4,4,4}
 //            };
-
-
-
-}
+//
+////Make it this loading from text file
+//
+//
+//}
