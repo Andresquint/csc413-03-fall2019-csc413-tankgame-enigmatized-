@@ -183,7 +183,7 @@ public class Camera implements KeyListener{
             //damaged(damage);
         }
     }
-
+  //reworked the entire project
 
     public double getDistFromLine(double x1, double y1, double x2, double y2) {
 
