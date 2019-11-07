@@ -8,11 +8,22 @@ import java.util.Random;
 
 
 public class Movers extends Entity{
-
-
     double moveDxx;
     double moveDyy;
     protected Random rand = new Random(System.nanoTime());
+    public double speed;//higher number means slower speed, 60 is 1 tile per second
+
+    public Movers(double xpos, double ypos, Texture texture, double moveDxx, double moveDyy) {
+        super(xpos, ypos, texture);
+        this.moveDxx = moveDxx;
+        this.moveDyy = moveDyy;
+
+        this.speed=6;//higher number means slower speed, 60 is 1 tile per frame? second?
+    }
+
+
+
+
 
 
     /**
@@ -51,7 +62,25 @@ public class Movers extends Entity{
         }
     }
 
+    protected boolean collision(double x, double y){
+//        System.out.println("X:"+ x);
+//        System.out.println("Y:"+ y);
+//        System.out.println("X:(int)"+ (int)x);
+//        System.out.println("Y:(int)"+(int) y);
+//        System.out.println("X int math round)"+(int) Math.round(x));
+//        System.out.println("Y int math round)"+(int) Math.round(y));
+//        x=(int) Math.round(x);
+//        y=(int) Math.round(y);
+//
+//        if( (Game.Game.map[(int) x][(int) y] > 0)  ){
+//
+//            return true;
+//        }else{
+//            return false;
+//        }
+        return Game.level.collision((int) x, (int) y);
 
+    }
 
 
 

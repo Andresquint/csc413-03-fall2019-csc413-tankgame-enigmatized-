@@ -4,6 +4,7 @@ import Animation.Texture;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Random;
 /**
  * Object that stores an image with a given filname
  * and creates a "flipbook" effect via a creation of
@@ -19,16 +20,25 @@ public class TextureAnimation {
     final static int FRAME_DELAY = 5;
     int frameDelay;
     int timer;
+    private static int rand;
 
     //current frame of animation and animation frames
     int currentFrame;
     ArrayList<Texture> animationFrames;
+    Texture[] myAnimation= new Texture[]{new Texture("res/rsz_powerup.png", 64, 64), Texture.stone, new Texture("res/WalkingDude/rsz_1robot1.png", 64, 64)  };
 
     //Name of animation spreadsheet
     String filename;
 
     //Whether or not to loop the animation
     boolean looping;
+
+    Random random = new Random();
+
+
+
+
+
 
     /**
      * Creates an animation with a default frame delay,
@@ -87,7 +97,16 @@ public class TextureAnimation {
      */
     public Texture Animate(){
         ensureCurrentFrame();
-        Texture result = animationFrames.get(currentFrame);
+
+        for(int i =0; i<2; i++){
+            int randomInteger= random.nextInt(3);
+            System.out.println("pseudo random int in a range : " + randomInteger);
+            rand= randomInteger;
+        }
+
+
+
+        Texture result = animationFrames.get(rand);
         if(timer%frameDelay == 0){
             timer = 1;
             currentFrame++;
@@ -95,6 +114,9 @@ public class TextureAnimation {
         timer++;
         return result;
     }
+
+
+
 
     /**
      * Ensures that the animation is not outside of
@@ -119,4 +141,20 @@ public class TextureAnimation {
         else
             return timer%frameDelay==0;
     }
+
+
+    public TextureAnimation(String s, String r, int frameNum, int frameDelay, boolean loopable) throws IOException {
+        this.frameDelay = frameDelay;
+        looping = loopable;
+        //Todo Will to change this so I actually load from file loaction
+        //This is just a test run
+        animationFrames= new ArrayList<>();
+        currentFrame = 0;
+        for(int i = 0; i < frameNum; i++){
+            Texture temp=myAnimation[i];
+            animationFrames.add(temp);
+        }
+        System.out.println("Loaded Textures for: " );
+    }
+
 }

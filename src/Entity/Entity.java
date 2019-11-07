@@ -1,61 +1,89 @@
 package Entity;
-import Game.*;
+import Animation.Texture;
+import Animation.TextureAnimation;
+
+import java.io.IOException;
 
 
-
-public class Entity {
+public class Entity implements Comparable<Entity> {
    // https://www.geeksforgeeks.org/check-line-touches-intersects-circle/
 
-    Camera camera;
+   // Camera camera;
     //HealthStats healthStats= new HealthStats();
     public double width;
     // Animation.Texture face = new Animation.Texture("res/enemy.png", 64);
-    public double xpos;	//the x location of the sprite
-    protected double dx;	//change in x location
-    public double ypos; 	//the y location of the sprite
-    protected double dy;	//change in y location
-    protected double speed;//higher number means slower speed, 60 is 1 tile per second
-    protected double lastPlayerX, lastPlayerY;
+    public double xPos;	//the x location of the sprite
+    public double yPos; 	//the y location of the sprite
+    protected Texture texture;
+    public double distance=0;
+    public double centerX;
+    public double health=100;
 
-    public Entity(double xpos, double ypos){
-        this.xpos=xpos;
-        this.ypos=ypos;
+    Texture[] stateTextures;
+    TextureAnimation textureAnimation1;
+
+
+   // double centerX;
+
+
+
+    public Entity(double xpos, double ypos, Texture texture){
+        this.xPos =xpos;
+        this.yPos =ypos;
         this.width=0.5;
-        this.speed=6;//higher number means slower speed, 60 is 1 tile per frame? second?
+        this.texture=texture;
+
+    }
+
+    public Entity() {
+
     }
 
 
-    Entity(){}
+    public void updateBehavior(double delta){
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-    public void checkCollision(int a, int b, int c,
-                               int x, int y, int radius)
-    {
-        // Finding the distance of line from center.
-        double dist = (Math.abs(a * x + b * y + c)) /
-                Math.sqrt(a * a + b * b);
-
-        // Checking if the distance is less than,
-        // greater than or equal to radius.
-        if (radius == dist)
-            System.out.println ( "Touch" );
-        else if (radius > dist)
-            System.out.println( "Intersect") ;
-        else
-            System.out.println( "Outside") ;
     }
+
+    public void damaged(int damageTaken) throws IOException {
+
+        System.out.print("Entity.Enemy Health before: "+ this.health);
+        this.health-=damageTaken;
+        //this.health2.damaged(damageTaken);
+        System.out.print("Entity.Enemy Health After Hit: "+ this.health);
+        if(health<0) {
+            texture=Texture.wood;
+//            textureChange();
+//            currentAnimation=dyingAnimation;
+//            animation();
+        }//What should the enemy do? Die?
+    }
+
+
+
+
+
+
+
+
+
+
+
+//    public void checkCollision(int a, int b, int c,
+//                               int x, int y, int radius)
+//    {
+//        // Finding the distance of line from center.
+//        double dist = (Math.abs(a * x + b * y + c)) /
+//                Math.sqrt(a * a + b * b);
+//
+//        // Checking if the distance is less than,
+//        // greater than or equal to radius.
+//        if (radius == dist)
+//            System.out.println ( "Touch" );
+//        else if (radius > dist)
+//            System.out.println( "Intersect") ;
+//        else
+//            System.out.println( "Outside") ;
+//    }
 
 
 
@@ -94,7 +122,69 @@ public class Entity {
 //            System.out.println( "Outside") ;
 //    }
 
+    public boolean alive() {
+        boolean alive = true;
+        if(health<=0)
+            alive = false;
+        return alive;
+    }
 
+    public double getDistFromLine(double x1, double y1, double x2, double y2) {
+
+        double A = xPos - x1;
+        double B = yPos - y1;
+        double C = x2 - x1;
+        double D = y2 - y1;
+
+        double dot = A * C + B * D;
+        double len_sq = C * C + D * D;
+        double param = -1;
+        if (len_sq != 0) //in case of 0 length line
+            param = dot / len_sq;
+
+        double xx, yy;
+
+        if (param < 0) {
+            xx = x1;
+            yy = y1;
+        }
+        else if (param > 1) {
+            xx = x2;
+            yy = y2;
+        }
+        else {
+            xx = x1 + param * C;
+            yy = y1 + param * D;
+        }
+
+        double dx = xPos - xx;
+        double dy = yPos - yy;
+        return Math.sqrt(dx * dx + dy * dy);
+    }
+
+
+    public double getSideFromLine(double x1, double y1, double x2, double y2) {
+
+        double d = (xPos - x1) * (y2 - y1) - (yPos - y1) * (x2 - x1);
+        return d;//Actual value worthless, only concerned with d being negative or postive Postive=Right side of sprite
+    }
+
+
+    public Texture getTexture() {
+        return texture;
+    }
+
+    @Override
+    public int compareTo(Entity o) {
+        if (distance > o.distance) {
+            return 1;
+        } else return -1;
+    }
+
+    protected void checkBullet(double xpos, double ypos, int damage, boolean playerBullet) {
+
+        return;
+    }
 }
 
 interface Arithmetic {

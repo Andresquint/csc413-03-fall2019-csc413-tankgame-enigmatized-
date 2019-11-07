@@ -1,15 +1,14 @@
 package Game;
 
 import Animation.Texture;
-import Entity.Enemy;
-import Game.Game;
+import Entity.Entity;
 import Mappack.Map;
 import RayCasting.MathAssist;
 
 import java.util.ArrayList;
 import java.awt.Color;
+import java.util.Collections;
 
-//https://github.com/mmueller536/Dungeon-of-the-Eternal-Guardian/tree/29972c9b85064e75153ac80f683f80a092607e50
 
 public class Screen {
     //public int[][] map;
@@ -223,7 +222,12 @@ public class Screen {
             double wallHitX = mapX + wallDeltaX;
             double wallHitY = mapY + wallDeltaY;
 
-            for (Enemy enemy : Game.levelInfo.getEnemies()) {
+            for (Entity enemy : Game.levelInfo.getEnemies()) {
+                enemy.distance=MathAssist.distanceBetweenPoints(camera.xPos, camera.yPos, enemy.xPos, enemy.yPos);
+
+            }
+            Collections.sort(Game.levelInfo.getEnemies(), Collections.reverseOrder());
+            for (Entity enemy : Game.levelInfo.getEnemies()) {
                 double hitDist = (enemy.getDistFromLine(camera.xPos, camera.yPos, wallHitX, wallHitY));
 
                 if (hitDist < 0.5) {
@@ -256,7 +260,7 @@ public class Screen {
                     // draw the sprite
                     Texture texture = enemy.getTexture();
 
-                    double perpEnemyDist = MathAssist.distanceBetweenPoints(camera.xPos, camera.yPos, enemy.xpos, enemy.ypos);
+                    double perpEnemyDist = MathAssist.distanceBetweenPoints(camera.xPos, camera.yPos, enemy.xPos, enemy.yPos);
                     if (perpEnemyDist > 0) lineHeight = Math.abs((int) (height / perpEnemyDist));
                     else lineHeight = height;
                     //calculate lowest and highest pixel to fill in current stripe
@@ -304,7 +308,7 @@ public class Screen {
                                 int y1 = clipVertically(y + verticalDisplace);
                                 pixels[y1 * width + x] = texel;
                             }
-                            zBuffer[x] = perpEnemyDist;
+                           /* zBuffer[x] = perpEnemyDist;*/
                         }
                     }
                 }

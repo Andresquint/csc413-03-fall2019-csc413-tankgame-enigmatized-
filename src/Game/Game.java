@@ -33,24 +33,7 @@ public class Game extends JFrame implements Runnable{
     public static Camera camera;
     public Screen screen;
     public static Map level;
-    public static int[][] map =
-            {
-                    {1,1,1,1,1,1,1,1,2,2,2,2,2,2,2},
-                    {1,0,0,0,0,0,0,0,0,0,0,0,0,0,2},
-                    {1,0,0,0,0,0,0,0,0,0,0,0,0,0,2},
-                    {1,0,0,0,0,0,0,0,0,0,0,0,0,0,2},
-                    {1,0,0,0,0,0,0,0,0,0,0,0,0,0,2},
-                    {1,0,0,0,0,0,0,0,0,0,0,0,0,0,2},
-                    {1,0,0,0,0,0,0,0,0,0,0,0,0,0,2},
-                    {1,0,0,0,0,0,0,0,0,0,0,0,0,0,2},
-                    {1,0,0,0,0,0,0,0,0,0,0,0,0,0,2},
-                    {1,0,0,0,0,0,0,0,0,0,0,0,0,0,2},
-                    {1,0,0,0,0,0,0,0,0,0,0,0,0,0,2},
-                    {1,0,0,0,0,0,0,0,0,0,0,0,0,0,2},
-                    {1,0,0,0,0,0,0,0,0,0,0,0,0,0,2},
-                    {1,0,0,0,0,0,0,0,0,0,0,0,0,0,4},
-                    {1,1,1,1,1,1,1,4,4,4,4,4,4,4,4}
-            };
+
     ArrayList<Entity> enemies;
     public static LevelInfo levelInfo;
     public static int screenWidth = 640;//640
@@ -79,8 +62,8 @@ public class Game extends JFrame implements Runnable{
         textures.add(Texture.stone);
         camera = new Camera(4.5, 4.5, 1, 0, 0, -.66);
         enemies= new ArrayList<>();
-        enemies.add(new Entity(3.5, 3.5));
-        level = new Map(map);
+        //enemies.add(new Entity(3.5, 3.5));
+        level = new Map(MapPackage.level1);
         screen = new Screen(level, mapWidth, mapHeight, textures, 640, 480);
         addKeyListener(camera);
         setSize(640, 480);
@@ -146,7 +129,7 @@ public class Game extends JFrame implements Runnable{
                 //handles all of the logic restricted time
 
                 screen.update(camera, pixels);
-                camera.update(map);
+                camera.update(level.map, now);
 
 
                 //Update Sprites
@@ -162,7 +145,10 @@ public class Game extends JFrame implements Runnable{
                 //Used for testing Sprite Movement
                 if(tickCount>25){
                     double finalDelta = delta;
-                    levelInfo.getEnemies().stream().forEach(s -> s.updateBehavior(finalDelta));
+                    for(int i=0; i<levelInfo.getEnemies().size(); i++) {
+                        levelInfo.getEnemies().get(i).updateBehavior(finalDelta);
+                    }
+                    //levelInfo.getEnemies().stream().forEach(s -> s.updateBehavior(finalDelta));
                     //levelInfo.getEnemies().get(0).updateBehavior();
                     //levelInfo.getEnemyFromEnemyList(1).updateBehavior(delta);
                     //levelInfo.getEnemyFromEnemyList(1).updatePlayer(delta);

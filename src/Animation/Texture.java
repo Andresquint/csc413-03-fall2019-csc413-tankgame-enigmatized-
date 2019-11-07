@@ -220,7 +220,32 @@ public class Texture {
         } catch (IOException e) {
             e.printStackTrace();
         }
+
     }
+
+    public static Texture walkingRobot1;
+
+    static {
+        try {
+            nothing = new Texture("res/WalkingDude/rsz_1robot1.png", 64);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+    }
+
+    public static Texture walkingRobot2;
+
+    static {
+        try {
+            nothing = new Texture("res/WalkingDude/rsz_robot2.png", 64);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+    }
+
+
 
 //    public static Texture deadterroist;
 //

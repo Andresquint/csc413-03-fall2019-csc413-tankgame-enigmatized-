@@ -2,15 +2,27 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8d46bb1f-080a-4e39-9486-c031e5c57bac" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Entity/Movers.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/bullet.png.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Animation/ANimationListTODO" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Entity/Bullet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Entity/Powerup.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Game/Source" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Mappack/MiniMap.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CSC413-game/GraphicsHelper.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CSC413-game/ScreenLeftOversForSPriteRendering" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CSC413-game/READ.me" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CSC413-game/READ.me" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Animation/Texture.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Animation/Texture.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Animation/TextureAnimation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Animation/TextureAnimation.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Entity/Enemy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Enemy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/Entity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Entity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/Movers.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Movers.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Game/Camera.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game/Camera.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Game/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game/Game.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ScreenLeftOversForSPriteRendering" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game/ScreenLeftOversForSPriteRendering" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Game/GameObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game/GameObject.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Game/Screen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game/Screen.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Mappack/LevelInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Mappack/LevelInfo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Mappack/Map.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Mappack/Map.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Mappack/MapPackage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Mappack/MapPackage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/READ.me" beforeDir="false" afterPath="$PROJECT_DIR$/src/READ.me" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -262,7 +274,25 @@
       <workItem from="1572974629043" duration="1789000" />
       <workItem from="1572976498076" duration="1401000" />
       <workItem from="1572978315277" duration="1776000" />
-      <workItem from="1572980141660" duration="1255000" />
+      <workItem from="1572980141660" duration="1906000" />
+      <workItem from="1572982084101" duration="1495000" />
+      <workItem from="1572983912377" duration="1789000" />
+      <workItem from="1572985725465" duration="1787000" />
+      <workItem from="1572987537390" duration="2179000" />
+      <workItem from="1572996277097" duration="849000" />
+      <workItem from="1573084437601" duration="95000" />
+      <workItem from="1573089580427" duration="1785000" />
+      <workItem from="1573091394448" duration="1785000" />
+      <workItem from="1573093236386" duration="160000" />
+      <workItem from="1573144143462" duration="1389000" />
+      <workItem from="1573145967192" duration="1801000" />
+      <workItem from="1573148606392" duration="1812000" />
+      <workItem from="1573151510559" duration="1966000" />
+      <workItem from="1573156851254" duration="1787000" />
+      <workItem from="1573158664749" duration="1786000" />
+      <workItem from="1573160482629" duration="1787000" />
+      <workItem from="1573162295921" duration="1784000" />
+      <workItem from="1573164106350" duration="1263000" />
     </task>
     <task id="LOCAL-00001" summary="Getting a health bar working">
       <created>1572812815636</created>
@@ -306,7 +336,14 @@
       <option name="project" value="LOCAL" />
       <updated>1572975985693</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Created a Sprite Movement Class">
+      <created>1572981520906</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1572981520906</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -329,6 +366,7 @@
     <MESSAGE value="Getting a health bar working" />
     <MESSAGE value="Right Placement on screen for Health Bar" />
     <MESSAGE value="Put Everything in packages" />
-    <option name="LAST_COMMIT_MESSAGE" value="Put Everything in packages" />
+    <MESSAGE value="Created a Sprite Movement Class" />
+    <option name="LAST_COMMIT_MESSAGE" value="Created a Sprite Movement Class" />
   </component>
 </project>

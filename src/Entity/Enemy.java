@@ -1,22 +1,39 @@
 package Entity;
 
-import java.util.Random;
 import Animation.Texture;
 import Animation.TextureAnimation;
-import Entity.Entity;
+import Game.Game;
 import Health.*;
 
 import java.io.IOException;
-import Game.*;
+
+import RayCasting.MathAssist;
 
 public class Enemy extends Movers {
 
     // coordinages in level position
-    public double xpos;
-    public double ypos;
+//    public double xpos;
+//    public double ypos;
     //movement change
     double moveDx;
     double moveDy;
+    double xDir;
+    double yDir;
+
+    boolean forward=true;
+    boolean back=false;
+    boolean right=false;
+    boolean left=true;
+    boolean shooting=false;
+
+    double MOVE_SPEED=0.16;
+    double ROTATION_SPEED=0.095;
+
+    double lastShot;
+    double nextShot=1.5;
+    double shootDistance=2.0;
+
+
 
 
 
@@ -25,10 +42,11 @@ public class Enemy extends Movers {
     //Abstract out health, because wall will need health
     //And you want a way to show dead walls....
     public Health health2;
-    double health;
+    //No, you can have all the health functions and damage functions in Entity class
+    //Then you can wrap it around another method with more specific implementation in each class if need be.
+    //But to save some time.
+    //You should make each Entity State based
 
-    //Radius
-    double width = 0.5;
 
     // distance to current camera position
     double distanceToCamera;
@@ -39,110 +57,100 @@ public class Enemy extends Movers {
     double xTransformed;
     double yTransformed;
 
-    private Texture texture;
+
 
     //distance?
-    public double distance=0;
-    public double centerX;
+//    public double distance=0;
+//    public double centerX;
 
     //Make this array
     //Use states
     //int states
 
     public Texture currentTexture;
-    protected TextureAnimation currentAnimation;
+    public TextureAnimation currentAnimation;
     protected TextureAnimation walkingAnimation;
     protected TextureAnimation attackAnimation;
     protected TextureAnimation dyingAnimation;
+    protected TextureAnimation seezure;
 
 
 
 
     public Enemy(double xPosition, double yPosition, Texture texture) throws IOException {
-        this.xpos = xPosition;
-        this.ypos = yPosition;
-        this.texture = texture;
+        super(xPosition, yPosition, texture, 0, 0);
+
+        //this.texture = texture;
         this.health=100;
         this.health2= new Health(100);
+        xDir=1;
+
 
         loadAnimations();//Loads animations for a given sprite
-        currentAnimation = walkingAnimation;
+        //currentAnimation = walkingAnimation;
 
     }
 
 
-    public double getDistFromLine(double x1, double y1, double x2, double y2) {
-
-        double A = xpos - x1;
-        double B = ypos- y1;
-        double C = x2 - x1;
-        double D = y2 - y1;
-
-        double dot = A * C + B * D;
-        double len_sq = C * C + D * D;
-        double param = -1;
-        if (len_sq != 0) //in case of 0 length line
-            param = dot / len_sq;
-
-        double xx, yy;
-
-        if (param < 0) {
-            xx = x1;
-            yy = y1;
+    protected void checkBullet(double xpos, double ypos, int damage, boolean playerBullet) {
+        if (playerBullet && MathAssist.distanceBetweenPoints(xpos, ypos, this.xPos, this.yPos)<this.width+0.1) {
+            damaged(damage);
         }
-        else if (param > 1) {
-            xx = x2;
-            yy = y2;
-        }
-        else {
-            xx = x1 + param * C;
-            yy = y1 + param * D;
-        }
-
-        double dx = xpos - xx;
-        double dy = ypos - yy;
-        return Math.sqrt(dx * dx + dy * dy);
     }
 
-
-    public double getSideFromLine(double x1, double y1, double x2, double y2) {
-
-        double d = (xpos - x1) * (y2 - y1) - (ypos - y1) * (x2 - x1);
-        return d;//Actual value worthless, only concerned with d being negative or postive Postive=Right side of sprite
-    }
-
-
-    public Texture getTexture() {
-        return texture;
-    }
 
 
 
     public void updateBehavior(double delta) {
+
+
         if(alive()) {
 
            // persue(delta);
-            randomMovement();
+          //  randomMovement();
+
             updatePlayer(delta);
+            updatepostions(Game.level.map);
 
         }else {
             //Handles the death of the sprite
             moveDy = 0;
             moveDy = 0;
             System.out.println("ARE WE EVER GOING IN HERE?");
-            currentAnimation = dyingAnimation;
-            //texture=Texture.wood;
 
-//            if(!hasGivenLoot){
-//                RaycastEngine.player.addLoot(getLoot());
-//                hasGivenLoot = true;
-//                RaycastEngine.playSound("sound/Hit.wav");
-//            }
-            // persuePath();
+            texture= seezure.Animate();
+
+
+                //animation();
+
         }
+
+
+
+
+
     }
 
     public void updatePlayer(double delta) {
+        double tXpos=xPos+(xDir*10);
+        double tYpos=yPos+(yDir*10);
+       // System.out.println(delta);
+        lastShot+=delta;
+        if(Game.camera.getSideFromLine(xPos, yPos, tXpos, tYpos)<0){
+            left=true;
+            right =false;
+
+        }else{
+            left=false;
+            right=true;
+        }
+        if(Game.camera.getDistFromLine(xPos, yPos, tXpos, tYpos)<shootDistance){
+            shooting=true;
+        }else shooting=false;
+
+
+
+
         //xpos++;
 
 //        System.out.println("xpos:" +xpos);
@@ -152,81 +160,53 @@ public class Enemy extends Movers {
 //        System.out.println("xpos: "+ xpos+"moveDx"+moveDx+"="+" "+(xpos+moveDx));
 //        System.out.println("ypos: "+ ypos+"moveDy"+moveDy+"="+" "+(ypos+Math.round(moveDy)));
 //        System.out.println( );
-        moveDy=Math.floor(moveDx*100)/100;
-        moveDy=Math.floor(moveDy*100)/100;
-//        System.out.println("xpos: "+ xpos+"moveDx"+moveDx+"="+" "+(xpos+moveDx));
-//        System.out.println("ypos: "+ ypos+"moveDy"+moveDy+"="+" "+(ypos+Math.round(moveDy)));
-        moveDx=moveDx/10;
-        moveDy=moveDy/10;
-//        System.out.println("xpos: "+ xpos+"moveDx"+moveDx+"="+" "+(xpos+moveDx));
-//        System.out.println("ypos: "+ ypos+"moveDy"+moveDy+"="+" "+(ypos+Math.round(moveDy)));
-
-        double newmoveDx=(moveDx)/(moveDy);//
-        double newMoveDy=(moveDy)/1000000000;
-        if(alive()){
-            try{
-            if(!collision( xpos+2, ypos)){
-
-                xpos+=moveDxx;
-
-            }
-            }catch (Exception e){
-                System.out.println("#1No bueno map out of bounds error");
-
-                }
-            try{
-            if(!collision(xpos, ypos+2)){
-                ypos+=moveDyy;
-            }
-            }catch (Exception e){
-                System.out.println("#2No bueno map out of bounds error");
-
-            }
-        }else{
-            moveDx = 0;
-            moveDy = 0;
-        }
-    }
-
-    public boolean alive() {
-        boolean alive = true;
-        if(health<=0)
-            alive = false;
-        return alive;
-    }
-
-    protected boolean collision(double x, double y){
-//        System.out.println("X:"+ x);
-//        System.out.println("Y:"+ y);
-//        System.out.println("X:(int)"+ (int)x);
-//        System.out.println("Y:(int)"+(int) y);
-//        System.out.println("X int math round)"+(int) Math.round(x));
-//        System.out.println("Y int math round)"+(int) Math.round(y));
-//        x=(int) Math.round(x);
-//        y=(int) Math.round(y);
+//        moveDy=Math.floor(moveDx*100)/100;
+//        moveDy=Math.floor(moveDy*100)/100;
+////        System.out.println("xpos: "+ xpos+"moveDx"+moveDx+"="+" "+(xpos+moveDx));
+////        System.out.println("ypos: "+ ypos+"moveDy"+moveDy+"="+" "+(ypos+Math.round(moveDy)));
+//        moveDx=moveDx/10;
+//        moveDy=moveDy/10;
+////        System.out.println("xpos: "+ xpos+"moveDx"+moveDx+"="+" "+(xpos+moveDx));
+////        System.out.println("ypos: "+ ypos+"moveDy"+moveDy+"="+" "+(ypos+Math.round(moveDy)));
 //
-//        if( (Game.Game.map[(int) x][(int) y] > 0)  ){
+//        double newmoveDx=(moveDx)/(moveDy);//
+//        double newMoveDy=(moveDy)/1000000000;
+//        if(alive()){
+//            try{
+//            if(!collision( xPos +2, yPos)){
 //
-//            return true;
+//                xPos +=moveDxx;
+//
+//            }
+//            }catch (Exception e){
+//                System.out.println("#1No bueno map out of bounds error");
+//
+//                }
+//            try{
+//            if(!collision(xPos, yPos +2)){
+//                yPos +=moveDyy;
+//            }
+//            }catch (Exception e){
+//                System.out.println("#2No bueno map out of bounds error");
+//
+//            }
 //        }else{
-//            return false;
+//            moveDx = 0;
+//            moveDy = 0;
 //        }
-        return Game.level.collision((int) x, (int) y);
-
     }
 
-    public void damaged(int damageTaken) throws IOException {
+
+
+
+
+    public void damaged(int damageTaken)  {
 
         System.out.print("Entity.Enemy Health before: "+ this.health);
         this.health-=damageTaken;
         this.health2.damaged(damageTaken);
         System.out.print("Entity.Enemy Health After Hit: "+ this.health);
-        if(health<0) {
-            texture=Texture.wood;
-            textureChange();
-            currentAnimation=dyingAnimation;
-            animation();
-        }//What should the enemy do? Die?
+
     }
 
 
@@ -236,7 +216,7 @@ public class Enemy extends Movers {
      * "lifespan".
      */
     protected void loadAnimations() throws IOException {
-        walkingAnimation = new TextureAnimation("res/Spider/walkingSpider.png",15);
+        seezure = new TextureAnimation("s", "r", 3,  5, true);
        // attackAnimation = new Animation.TextureAnimation("res/MechCon.png", 1);
         dyingAnimation = new TextureAnimation("res/Spider/deadSpider.png",1, 5,false);
     }
@@ -248,7 +228,7 @@ public class Enemy extends Movers {
      * of a second.
      */
     protected void animation(){
-        currentTexture = currentAnimation.Animate();
+        this.texture = walkingAnimation.Animate();
     }
 
     public Texture textureChange() throws IOException {
@@ -259,4 +239,53 @@ public class Enemy extends Movers {
 
 
 
-}
+    public void updatepostions(int[][] map){
+        if(shooting&& lastShot>nextShot){
+            lastShot=0;
+
+            try {
+                attack();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+
+        }
+        if(forward) {
+            if(map[(int)(xPos + xDir * MOVE_SPEED)][(int)yPos] == 0) {
+                xPos +=xDir*MOVE_SPEED;
+            }
+            if(map[(int)xPos][(int)(yPos + yDir * MOVE_SPEED)] ==0)
+                yPos +=yDir*MOVE_SPEED;
+        }
+        if(back) {
+            if(map[(int)(xPos - xDir * MOVE_SPEED)][(int)yPos] == 0)
+                xPos-=xDir*MOVE_SPEED;
+            if(map[(int)xPos][(int)(yPos - yDir * MOVE_SPEED)]==0)
+                yPos-=yDir*MOVE_SPEED;
+        }
+        if(right) {
+            double oldxDir=xDir;
+            xDir=xDir*Math.cos(-ROTATION_SPEED) - yDir*Math.sin(-ROTATION_SPEED);
+            yDir=oldxDir*Math.sin(-ROTATION_SPEED) + yDir*Math.cos(-ROTATION_SPEED);
+
+
+        }
+        if(left) {
+            double oldxDir=xDir;
+            xDir=xDir*Math.cos(ROTATION_SPEED) - yDir*Math.sin(ROTATION_SPEED);
+            yDir=oldxDir*Math.sin(ROTATION_SPEED) + yDir*Math.cos(ROTATION_SPEED);
+
+
+        }
+    }
+
+    public void attack() throws IOException {
+
+
+        Game.playSound("sound/Shoot.wav");
+        Game.levelInfo.getEnemies().add(new Bullet(this.xPos, this.yPos, new Texture("res/bullet.png.png", 64), xDir, yDir, false, 10));
+
+    }
+
+
+    }

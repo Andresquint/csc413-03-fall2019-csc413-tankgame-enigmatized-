@@ -18,4 +18,7 @@ public class Map {
         }
         return map[x][y]!=0;
     }
+
+
+
 }

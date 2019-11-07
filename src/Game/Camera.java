@@ -1,6 +1,9 @@
 package Game;
 
+import Animation.Texture;
+import Entity.Bullet;
 import Game.Game;
+import RayCasting.MathAssist;
 import Weapons.Weapon;
 
 import java.awt.event.KeyEvent;
@@ -22,6 +25,12 @@ public class Camera implements KeyListener{
     //Players health and gold
     private int health;
     private int gold;
+
+    //Pplayer Game stats
+    double nextShotTime=0;
+    double shotTimeDelta=606863000;
+
+
 
     public Camera(double x, double y, double xd, double yd, double xp, double yp) throws IOException {
         xPos = x;
@@ -61,11 +70,11 @@ public class Camera implements KeyListener{
             back = true;
         if((key.getKeyCode() == KeyEvent.VK_SPACE)) {
             shooting = true;
-            try {
-                attack();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
+//            try {
+//                attack();
+//            } catch (IOException e) {
+//                e.printStackTrace();
+//            }
         }
     }
     public void keyReleased(KeyEvent key) {
@@ -80,7 +89,17 @@ public class Camera implements KeyListener{
         if((key.getKeyCode() == KeyEvent.VK_SPACE))
             shooting = false;
     }
-    public void update(int[][] map) {
+    public void update(int[][] map, long now) {
+        if(shooting && now>= nextShotTime){
+            try {
+                attack();
+                System.out.println(now);
+            }catch(Exception e){
+                System.out.println(e);
+            }
+            nextShotTime=now+shotTimeDelta;
+
+        }
         if(forward) {
             if(map[(int)(xPos + xDir * MOVE_SPEED)][(int)yPos] == 0) {
                 xPos+=xDir*MOVE_SPEED;
@@ -129,31 +148,82 @@ public class Camera implements KeyListener{
 
 
         Game.playSound("sound/Shoot.wav");
+        Game.levelInfo.getEnemies().add(new Bullet(this.xPos, this.yPos, new Texture("res/bullet.png.png", 64), xDir, yDir, true, 50));
 
-        for(int i=0; i<Game.levelInfo.getEnemiesListSize(); i++){
-            //Checks to make sure if they are opening a chest or not
 
-                //ensures the player is close enough
-                if(Game.levelInfo.getEnemyFromEnemyList(i).distance<1){
-                    if((Game.levelInfo.getEnemyFromEnemyList(i).centerX>currentWeapon.getLeftRect()) && (Game.levelInfo.getEnemyFromEnemyList(i).centerX<currentWeapon.getRightRect())){
-                        System.out.println("Do we get herer !!!!!!!!!!!!!!!!!!!!!!!!");
-                        Game.levelInfo.getEnemyFromEnemyList(i).damaged(currentWeapon.getDamage());
 
-                       // Game.Game.playSound("sound/ExplosionWarning.wav");
-                    }
-                }
-            else{
-                //Checks range and attacks
-                if(Game.levelInfo.getEnemyFromEnemyList(i).distance<currentWeapon.getWeaponRange()){
-                    if((Game.levelInfo.getEnemyFromEnemyList(i).centerX>currentWeapon.getLeftRect()) && (Game.levelInfo.getEnemyFromEnemyList(i).centerX<currentWeapon.getRightRect())){
-                        Game.levelInfo.getEnemyFromEnemyList(i).damaged(currentWeapon.getDamage());
-                    }
-                }
-            }
-        }
+
+//        for(int i=0; i<Game.levelInfo.getEnemiesListSize(); i++){
+//            //Checks to make sure if they are opening a chest or not
+//
+//                //ensures the player is close enough
+//                if(Game.levelInfo.getEnemyFromEnemyList(i).distance<1){
+//                   // System.out.println("Souldn't we be getting here?");
+//                    if((Game.levelInfo.getEnemyFromEnemyList(i).centerX>currentWeapon.getLeftRect()) && (Game.levelInfo.getEnemyFromEnemyList(i).centerX<currentWeapon.getRightRect())){
+//                        System.out.println("Do we get herer !!!!!!!!!!!!!!!!!!!!!!!!");
+//                        Game.levelInfo.getEnemyFromEnemyList(i).damaged(currentWeapon.getDamage());
+//
+//                       // Game.Game.playSound("sound/ExplosionWarning.wav");
+//                    }
+//                }
+//            else{
+//                //Checks range and attacks
+//                if(Game.levelInfo.getEnemyFromEnemyList(i).distance<currentWeapon.getWeaponRange()){
+//                    if((Game.levelInfo.getEnemyFromEnemyList(i).centerX>currentWeapon.getLeftRect()) && (Game.levelInfo.getEnemyFromEnemyList(i).centerX<currentWeapon.getRightRect())){
+//                        Game.levelInfo.getEnemyFromEnemyList(i).damaged(currentWeapon.getDamage());
+//                    }
+//                }
+//            }
+//        }
 
     }
 
+    public void checkBullet(double xpos, double ypos, int damage, boolean playerBullet) {
+        if (playerBullet && MathAssist.distanceBetweenPoints(xpos, ypos, this.xPos, this.yPos)<0.4) {
+            //damaged(damage);
+        }
+    }
+
+
+    public double getDistFromLine(double x1, double y1, double x2, double y2) {
+
+        double A = xPos - x1;
+        double B = yPos - y1;
+        double C = x2 - x1;
+        double D = y2 - y1;
+
+        double dot = A * C + B * D;
+        double len_sq = C * C + D * D;
+        double param = -1;
+        if (len_sq != 0) //in case of 0 length line
+            param = dot / len_sq;
+
+        double xx, yy;
+
+        if (param < 0) {
+            xx = x1;
+            yy = y1;
+        }
+        else if (param > 1) {
+            xx = x2;
+            yy = y2;
+        }
+        else {
+            xx = x1 + param * C;
+            yy = y1 + param * D;
+        }
+
+        double dx = xPos - xx;
+        double dy = yPos - yy;
+        return Math.sqrt(dx * dx + dy * dy);
+    }
+
+
+    public double getSideFromLine(double x1, double y1, double x2, double y2) {
+
+        double d = (xPos - x1) * (y2 - y1) - (yPos - y1) * (x2 - x1);
+        return d;//Actual value worthless, only concerned with d being negative or postive Postive=Right side of sprite
+    }
 
 
 }

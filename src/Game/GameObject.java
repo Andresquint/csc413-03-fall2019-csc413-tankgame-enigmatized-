@@ -31,7 +31,7 @@ public class GameObject
         double tempY = yPos;
         double tempX = xPos;
         while(xDirFromCam == Math.signum(tempX - c.xPos)) {
-            if(Game.map[(int)tempX][(int)tempY] != 0) return pixels;
+            if(Game.level.map[(int)tempX][(int)tempY] != 0) return pixels;
             tempX -= xDist/(dist*10);
             tempY -= yDist/(dist*10);
         }
