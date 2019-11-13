@@ -3,6 +3,7 @@ package Game;
 import Animation.Texture;
 import Entity.Entity;
 import Mappack.Map;
+import Mappack.MiniMap;
 import RayCasting.MathAssist;
 
 import java.util.ArrayList;
@@ -15,6 +16,7 @@ public class Screen {
     public Map map;
     public int mapWidth, mapHeight, width, height;
     public ArrayList<Texture> textures;  //This will be used for enemies later
+    private MiniMap mm;
 
 
     private double[] zBuffer;
@@ -58,6 +60,7 @@ public class Screen {
         width = w; //Pixil of screen //640
         height = h;
         this.zBuffer = new double[width];
+        mm= new MiniMap(m);
 
     }
 
@@ -323,6 +326,7 @@ public class Screen {
 
 
         }
+        pixels=mm.paint(pixels, width, camera);
         return pixels;
 
     }
