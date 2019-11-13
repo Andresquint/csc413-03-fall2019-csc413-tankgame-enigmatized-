@@ -13,6 +13,8 @@ import java.util.List;
 public class LevelInfo {
 
     private List<Entity> enemiesList = new ArrayList<>();
+    private List<Entity> actualenemiesList = new ArrayList<>();
+
 
     public LevelInfo() throws IOException {
 
@@ -22,11 +24,19 @@ public class LevelInfo {
         this.enemiesList.add(new Enemy(10, 10, new Texture("res/terrr.png", 64, 64)));
         this.enemiesList.add(new Powerup(2, 2, new Texture("res/rsz_powerup.png", 64, 64) ));
 
+        for(Entity possibleEnemy : enemiesList){
+            if(possibleEnemy instanceof Enemy ) this.actualenemiesList.add(possibleEnemy);
+
+        }
 
     }
 
     public List<Entity> getEnemies() {
         return enemiesList;
+    }
+
+    public List<Entity> getActualEnemies(){
+        return actualenemiesList;
     }
 
     public Entity getEnemyFromEnemyList(int num) {

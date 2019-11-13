@@ -2,12 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8d46bb1f-080a-4e39-9486-c031e5c57bac" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Mappack/MiniMaps.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/CSC413-game/READ.me" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CSC413-game/READ.me" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Game/Screen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game/Screen.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Mappack/MapPackage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Mappack/MapPackage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Mappack/MiniMap.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Mappack/MiniMap.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/Interface/Interface.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Animation/TextureAnimation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Animation/TextureAnimation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/Bullet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Bullet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/Enemy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Enemy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/Entity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Entity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/Powerup.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Powerup.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Game/Camera.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game/Camera.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Game/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game/Game.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Mappack/LevelInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Mappack/LevelInfo.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/READ.me" beforeDir="false" afterPath="$PROJECT_DIR$/src/READ.me" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -283,7 +288,14 @@
       <workItem from="1573601918508" duration="1785000" />
       <workItem from="1573603728355" duration="1787000" />
       <workItem from="1573605540453" duration="1994000" />
-      <workItem from="1573622376804" duration="845000" />
+      <workItem from="1573622376804" duration="1334000" />
+      <workItem from="1573624265056" duration="1537000" />
+      <workItem from="1573626123377" duration="687000" />
+      <workItem from="1573664061378" duration="1911000" />
+      <workItem from="1573666001739" duration="1789000" />
+      <workItem from="1573668042550" duration="1829000" />
+      <workItem from="1573671495451" duration="1900000" />
+      <workItem from="1573673990808" duration="1790000" />
     </task>
     <task id="LOCAL-00001" summary="Getting a health bar working">
       <created>1572812815636</created>
@@ -348,7 +360,14 @@
       <option name="project" value="LOCAL" />
       <updated>1573165589952</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Got MiniMap Working!">
+      <created>1573623317407</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1573623317407</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -372,6 +391,7 @@
     <MESSAGE value="Right Placement on screen for Health Bar" />
     <MESSAGE value="Put Everything in packages" />
     <MESSAGE value="Created a Sprite Movement Class" />
-    <option name="LAST_COMMIT_MESSAGE" value="Created a Sprite Movement Class" />
+    <MESSAGE value="Got MiniMap Working!" />
+    <option name="LAST_COMMIT_MESSAGE" value="Got MiniMap Working!" />
   </component>
 </project>

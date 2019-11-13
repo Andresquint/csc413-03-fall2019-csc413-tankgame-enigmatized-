@@ -59,6 +59,19 @@ public class Entity implements Comparable<Entity> {
     }
 
 
+/*          Gets Health of Entity
+            Primarily used in Game Class
+            For rendering health bars of enemies
+*/
+
+    public double getHealth() {
+        double result = ((double)health)/100;
+        if(result <= 0){
+            result = 0.01;//Returns 1 instead of zero because the way enemy health bar rendering is
+        }               //An Out of Bounds error gets thrown if zero
+        return result;
+    }
+
 
 
 

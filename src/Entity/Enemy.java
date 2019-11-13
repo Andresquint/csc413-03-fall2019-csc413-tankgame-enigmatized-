@@ -197,14 +197,20 @@ public class Enemy extends Movers {
     }
 
 
-
+    public double getHealth() {
+        double result = ((double)health)/100;
+        if(result <= 0){
+            result = 0.01;//Returns 1 instead of zero because the way enemy health bar rendering is
+        }               //An Out of Bounds error gets thrown if zero
+        return result;
+    }
 
 
     public void damaged(int damageTaken)  {
 
         System.out.print("Entity.Enemy Health before: "+ this.health);
         this.health-=damageTaken;
-        this.health2.damaged(damageTaken);
+        //this.health2.damaged(damageTaken);
         System.out.print("Entity.Enemy Health After Hit: "+ this.health);
 
     }

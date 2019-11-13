@@ -30,6 +30,10 @@ public class Bullet extends Movers {
     public void updateBehavior(double delta) {
         double newX = xPos +moveDxx*speedMult;
         double newY = yPos +moveDyy*speedMult;
+        //I am a bit confused by this if Statement
+        //Does it just remove enemy?
+        //I don't think it does that at all.
+        //This could be why I am having trouble with printing enemy health
         if(collision(newX, newY)){
             Game.levelInfo.getEnemies().remove(this);
             return;
@@ -38,6 +42,8 @@ public class Bullet extends Movers {
         yPos =newY;
         for(int i=0; i<Game.levelInfo.getEnemiesListSize(); i++){
             Entity e=Game.levelInfo.getEnemies().get(i);
+            //Um huge error here!
+            //Check Bullet doesn't do anything
             e.checkBullet(xPos, yPos, damage, playerBullet);
 
 

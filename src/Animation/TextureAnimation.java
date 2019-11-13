@@ -26,7 +26,7 @@ public class TextureAnimation {
     int currentFrame;
     ArrayList<Texture> animationFrames;
     Texture[] myAnimation= new Texture[]{new Texture("res/rsz_powerup.png", 64, 64), Texture.stone, new Texture("res/WalkingDude/rsz_1robot1.png", 64, 64)  };
-
+    Texture[] myPowerUpAnime=new Texture[]{new Texture("res/rsz_powerup.png", 64, 64),};
     //Name of animation spreadsheet
     String filename;
 
