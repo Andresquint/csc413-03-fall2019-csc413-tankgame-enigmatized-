@@ -11,9 +11,6 @@ import java.util.Random;
  * frames from the original image. This is designed
  * to be done at a rate of 60 frames per second outside
  * of this Object.
- *
- * @author Michael Mueller, Paul Coen, Dakota Oria
- *
  */
 public class TextureAnimation {
     //Default and custom delays between frames
@@ -25,8 +22,8 @@ public class TextureAnimation {
     //current frame of animation and animation frames
     int currentFrame;
     ArrayList<Texture> animationFrames;
-    Texture[] myAnimation= new Texture[]{new Texture("res/rsz_powerup.png", 64, 64), Texture.stone, new Texture("res/WalkingDude/rsz_1robot1.png", 64, 64)  };
-    Texture[] myPowerUpAnime=new Texture[]{new Texture("res/rsz_powerup.png", 64, 64),};
+    Texture[] myAnimation= new Texture[]{new Texture("resources/rsz_powerup.png", 64, 64), Texture.stone, new Texture("resources/WalkingDude/rsz_1robot1.png", 64, 64)  };
+    Texture[] myPowerUpAnime=new Texture[]{new Texture("resources/rsz_powerup.png", 64, 64),};
     //Name of animation spreadsheet
     String filename;
 
@@ -177,8 +174,8 @@ public class TextureAnimation {
     public static TextureAnimation enemyAlive;
     static {
         try {
-            Texture[] t={ new Texture("res/WalkingDude/rsz_1robot1.png", 64, 64),
-                        new Texture("res/rsz_terrorist.png", 64, 64)};
+            Texture[] t={ new Texture("resources/WalkingDude/rsz_1robot1.png", 64, 64),
+                        new Texture("resources/rsz_terrorist.png", 64, 64)};
             enemyAlive= new TextureAnimation(t, 2, true);
            } catch (IOException e) {
             e.printStackTrace();
@@ -186,7 +183,19 @@ public class TextureAnimation {
 
     }
 
+    public static TextureAnimation enemyWalking;
+    static {
+        try {
+            Texture[] t={ new Texture("resources/WalkingEnemy/rsz_walking1.png", 64, 64),
+                        new Texture("resources/WalkingEnemy/rsz_walking2.png", 64, 64),
+                        new Texture("resources/WalkingEnemy/rsz_walking_3.png", 64, 64),
+                        new Texture("resources/WalkingEnemy/rsz_walking4.png", 64, 64)};
+            enemyAlive= new TextureAnimation(t, 2, true);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
 
+    }
 
 
 

@@ -2,19 +2,49 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8d46bb1f-080a-4e39-9486-c031e5c57bac" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Entity/BreakableWall.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CSC413-game/READ.me" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CSC413-game/READ.me" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CSC413-game/UILoadingMenu/SplashPage.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CSC413-game/UILoadingMenu/SplashPage.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/1.png" beforeDir="false" afterPath="$PROJECT_DIR$/resources/1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/2.png" beforeDir="false" afterPath="$PROJECT_DIR$/resources/2.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/DefenseLine.mp3" beforeDir="false" afterPath="$PROJECT_DIR$/resources/DefenseLine.mp3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/GrubScrub" beforeDir="false" afterPath="$PROJECT_DIR$/resources/GrubScrub" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/Interface/Armor Bar.png" beforeDir="false" afterPath="$PROJECT_DIR$/resources/Interface/Armor Bar.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/Interface/Blank.png" beforeDir="false" afterPath="$PROJECT_DIR$/resources/Interface/Blank.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/Interface/HealthBar.png" beforeDir="false" afterPath="$PROJECT_DIR$/resources/Interface/HealthBar.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/Interface/deathScreen.png" beforeDir="false" afterPath="$PROJECT_DIR$/resources/Interface/deathScreen.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/OhFUck" beforeDir="false" afterPath="$PROJECT_DIR$/resources/OhFUck" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/READ.me" beforeDir="false" afterPath="$PROJECT_DIR$/resources/READ.me" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/Sand.png" beforeDir="false" afterPath="$PROJECT_DIR$/resources/Sand.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/Spider/attackingSpider.png" beforeDir="false" afterPath="$PROJECT_DIR$/resources/Spider/attackingSpider.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/Spider/deadSpider.png" beforeDir="false" afterPath="$PROJECT_DIR$/resources/Spider/deadSpider.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/Spider/walkingSpider.png" beforeDir="false" afterPath="$PROJECT_DIR$/resources/Spider/walkingSpider.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/Weapons/fist.png" beforeDir="false" afterPath="$PROJECT_DIR$/resources/Weapons/fist.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/bluestone.png" beforeDir="false" afterPath="$PROJECT_DIR$/resources/bluestone.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/bullet.png.png" beforeDir="false" afterPath="$PROJECT_DIR$/resources/bullet.png.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/cs.png" beforeDir="false" afterPath="$PROJECT_DIR$/resources/cs.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/cs1.png" beforeDir="false" afterPath="$PROJECT_DIR$/resources/cs1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/enemy.png" beforeDir="false" afterPath="$PROJECT_DIR$/resources/enemy.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/exit.png" beforeDir="false" afterPath="$PROJECT_DIR$/resources/exit.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/greystone.png" beforeDir="false" afterPath="$PROJECT_DIR$/resources/greystone.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/nothing3232.png" beforeDir="false" afterPath="$PROJECT_DIR$/resources/nothing3232.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/ntohing3216.png" beforeDir="false" afterPath="$PROJECT_DIR$/resources/ntohing3216.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/play.png" beforeDir="false" afterPath="$PROJECT_DIR$/resources/play.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/redbrick.png" beforeDir="false" afterPath="$PROJECT_DIR$/resources/redbrick.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/splash.png" beforeDir="false" afterPath="$PROJECT_DIR$/resources/splash.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/title.png" beforeDir="false" afterPath="$PROJECT_DIR$/resources/title.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/vs.png" beforeDir="false" afterPath="$PROJECT_DIR$/resources/vs.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/wood - Copy.png" beforeDir="false" afterPath="$PROJECT_DIR$/resources/wood - Copy.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/wood.png" beforeDir="false" afterPath="$PROJECT_DIR$/resources/wood.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Animation/Texture.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Animation/Texture.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Animation/TextureAnimation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Animation/TextureAnimation.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/Bullet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Bullet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/BreakableWall.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/BreakableWall.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Entity/Enemy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Enemy.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/Entity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Entity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/Powerup.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Powerup.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/Terrorist.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Terrorist.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Game/Camera.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game/Camera.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Game/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game/Game.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Game/Screen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game/Screen.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Mappack/LevelInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Mappack/LevelInfo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Mappack/MapPackage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Mappack/MapPackage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/READ.me" beforeDir="false" afterPath="$PROJECT_DIR$/src/READ.me" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/UILoadingMenu/SplashPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/UILoadingMenu/SplashPage.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -71,20 +101,20 @@
     <property name="settings.editor.selected.configurable" value="AndroidSdkUpdater" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\garre\CSC413-game\src\Game" />
-      <recent name="C:\Users\garre\CSC413-game\src\Mappack" />
-      <recent name="C:\Users\garre\CSC413-game\src\UILoadingMenu" />
-      <recent name="C:\Users\garre\CSC413-game\res" />
-      <recent name="C:\Users\garre\CSC413-game\src" />
-    </key>
-    <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\garre\CSC413-game\res" />
       <recent name="C:\Users\garre\CSC413-game\sound" />
       <recent name="C:\Users\garre\CSC413-game\res\Weapons" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\garre\CSC413-game\resources" />
+      <recent name="C:\Users\garre\CSC413-game" />
+      <recent name="C:\Users\garre\CSC413-game\src\Game" />
+      <recent name="C:\Users\garre\CSC413-game\src\Mappack" />
+      <recent name="C:\Users\garre\CSC413-game\src\UILoadingMenu" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -308,6 +338,9 @@
       <workItem from="1573693168460" duration="1788000" />
       <workItem from="1573694985849" duration="1855000" />
       <workItem from="1573697099674" duration="568000" />
+      <workItem from="1573699169460" duration="120000" />
+      <workItem from="1573766089835" duration="2024000" />
+      <workItem from="1573769640295" duration="644000" />
     </task>
     <task id="LOCAL-00001" summary="Getting a health bar working">
       <created>1572812815636</created>
@@ -386,7 +419,14 @@
       <option name="project" value="LOCAL" />
       <updated>1573676393408</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="Now working: breaking wall, enemy Health bar, my lives, my health bar">
+      <created>1573699243839</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1573699243839</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -412,6 +452,7 @@
     <MESSAGE value="Created a Sprite Movement Class" />
     <MESSAGE value="Got MiniMap Working!" />
     <MESSAGE value="Got Powerups working!" />
-    <option name="LAST_COMMIT_MESSAGE" value="Got Powerups working!" />
+    <MESSAGE value="Now working: breaking wall, enemy Health bar, my lives, my health bar" />
+    <option name="LAST_COMMIT_MESSAGE" value="Now working: breaking wall, enemy Health bar, my lives, my health bar" />
   </component>
 </project>

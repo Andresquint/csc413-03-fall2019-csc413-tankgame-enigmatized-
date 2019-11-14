@@ -43,7 +43,7 @@ public class Game extends JFrame implements Runnable{
     int tickCount=0;
 
     //Health Bar Assets
-    private ImageIcon HB = new ImageIcon("res/Interface/HealthBarBorder.png");//Creates the HealthBarBorder
+    private ImageIcon HB = new ImageIcon("resources/Interface/HealthBarBorder.png");//Creates the HealthBarBorder
     private Image HealthBarBorder = HB.getImage();
 
 
@@ -104,7 +104,7 @@ public class Game extends JFrame implements Runnable{
         g.drawImage(camera.currentWeapon.getImage(), -67, 80, image.getWidth(), (int)(image.getHeight()*.95), null);
         //Health Bar for Player
         if(camera.getHealth()>0){
-            g.drawImage(getSizeOf(0,0,(int)(136*camera.getHealth()), 36, "res/Interface/HealthBar.png"), (int)(screenWidth*.05), (int)(screenHeight*.90), (int)((screenWidth*.3445)*camera.getHealth()), (int)(screenHeight*.075), null);
+            g.drawImage(getSizeOf(0,0,(int)(136*camera.getHealth()), 36, "resources/Interface/HealthBar.png"), (int)(screenWidth*.05), (int)(screenHeight*.90), (int)((screenWidth*.3445)*camera.getHealth()), (int)(screenHeight*.075), null);
         }
         //
         //HealthBarFor enemy

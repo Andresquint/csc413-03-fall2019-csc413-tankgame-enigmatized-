@@ -58,13 +58,13 @@ public class Camera implements KeyListener{
 
     private void loadWeapons() throws IOException {
         //Initializes all the weapons below
-        Weapon fist = new Weapon("res/Weapons/fist.png", 2,(int)Math.round(.33*Game.screenWidth), (int)Math.round(.66*Game.screenWidth), 15, 2);
+        Weapon fist = new Weapon("resources/Weapons/fist.png", 2,(int)Math.round(.33*Game.screenWidth), (int)Math.round(.66*Game.screenWidth), 15, 2);
 
     }
 
     private Weapon loadFist() throws IOException {
         //Initializes all the weapons below
-        return new Weapon("res/Weapons/crossbow.png", 1,(int)Math.round(.20*Game.screenWidth), (int)Math.round(.80*Game.screenWidth), 50, 10.0);
+        return new Weapon("resources/Weapons/crossbow.png", 1,(int)Math.round(.20*Game.screenWidth), (int)Math.round(.80*Game.screenWidth), 50, 10.0);
         //Weapons.Weapon fist = new Weapons.Weapon("res/Weapons/fist.png", 2,(int)Math.round(.33*Game.Game.screenWidth), (int)Math.round(.66*Game.Game.screenWidth), 15, 2);
     }
 
@@ -187,7 +187,7 @@ public class Camera implements KeyListener{
 
 
         Game.playSound("sound/Shoot.wav");
-        Game.levelInfo.getEnemies().add(new Bullet(this.xPos, this.yPos, new Texture("res/bullet.png.png", 64), xDir, yDir, true, 50));
+        Game.levelInfo.getEnemies().add(new Bullet(this.xPos, this.yPos, new Texture("resources/bullet.png.png", 64), xDir, yDir, true, 50));
 
 
 

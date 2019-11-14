@@ -164,7 +164,7 @@ public class Texture {
     //CLASS SCHEDULE
     static {
         try {
-            wood = new Texture("res/wood.png", 64);
+            wood = new Texture("resources/wood.png", 64);
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -174,7 +174,7 @@ public class Texture {
 
     static {
         try {
-            brick = new Texture("res/redbrick.png", 64);
+            brick = new Texture("resources/redbrick.png", 64);
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -184,7 +184,7 @@ public class Texture {
 
     static {
         try {
-            bluestone = new Texture("res/bluestone.png", 64);
+            bluestone = new Texture("resources/bluestone.png", 64);
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -194,7 +194,7 @@ public class Texture {
 
     static {
         try {
-            stone = new Texture("res/greystone.png", 64);
+            stone = new Texture("resources/greystone.png", 64);
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -206,7 +206,7 @@ public class Texture {
 
     static {
         try {
-            nothing = new Texture("res/nothing3232.png", 32);
+            nothing = new Texture("resources/nothing3232.png", 32);
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -216,7 +216,7 @@ public class Texture {
 
     static {
         try {
-            nothing = new Texture("res/terr.png", 64);
+            nothing = new Texture("resources/terr.png", 64);
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -227,7 +227,7 @@ public class Texture {
 
     static {
         try {
-            nothing = new Texture("res/WalkingDude/rsz_1robot1.png", 64);
+            nothing = new Texture("resources/WalkingDude/rsz_1robot1.png", 64);
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -238,7 +238,7 @@ public class Texture {
 
     static {
         try {
-            nothing = new Texture("res/WalkingDude/rsz_robot2.png", 64);
+            nothing = new Texture("resources/WalkingDude/rsz_robot2.png", 64);
         } catch (IOException e) {
             e.printStackTrace();
         }

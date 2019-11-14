@@ -232,7 +232,7 @@ public class Enemy extends Movers {
         seezure = new TextureAnimation("s", "r", 3,  5, true);
         walkingAnimation= TextureAnimation.enemyAlive;
        // attackAnimation = new Animation.TextureAnimation("res/MechCon.png", 1);
-        dyingAnimation = new TextureAnimation("res/Spider/deadSpider.png",1, 5,false);
+        dyingAnimation = new TextureAnimation("resources/Spider/deadSpider.png",1, 5,false);
     }
 
     /**
@@ -248,7 +248,7 @@ public class Enemy extends Movers {
     public Texture textureChange() throws IOException {
         //Note, I think the problem is that this isn't thread safe.
         //Not 100% on how one would best handle that issue?
-        return this.texture= new Texture( "res/3232.png", 16, 16);
+        return this.texture= new Texture( "resources/3232.png", 16, 16);
     }
 
     public int getPixel(int u, int v){
@@ -308,7 +308,7 @@ public class Enemy extends Movers {
 
 
         Game.playSound("sound/Shoot.wav");
-        Game.levelInfo.getEnemies().add(new Bullet(this.xPos, this.yPos, new Texture("res/bullet.png.png", 64), xDir, yDir, false, 10));
+        Game.levelInfo.getEnemies().add(new Bullet(this.xPos, this.yPos, new Texture("resources/bullet.png.png", 64), xDir, yDir, false, 10));
 
     }
 

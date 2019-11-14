@@ -16,7 +16,7 @@ public class Terrorist extends Enemy {
 
     protected void loadAnimations() throws IOException {
 
-        dyingAnimation = new TextureAnimation("res/Spider/deadSpider.png",1, 5,false);//example death animation
+        dyingAnimation = new TextureAnimation("resources/Spider/deadSpider.png",1, 5,false);//example death animation
     }
 
 }

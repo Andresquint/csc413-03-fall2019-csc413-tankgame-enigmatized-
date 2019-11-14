@@ -58,7 +58,7 @@ public class SplashPage extends JWindow {
         getContentPane().setLayout(borderLayout);
         end.setLayout(endFlow);
         end.setBackground(Color.BLACK);
-        getContentPane().add(new JLabel(new ImageIcon(ImageIO.read(new File("./res/cs1.png")))));
+        getContentPane().add(new JLabel(new ImageIcon(ImageIO.read(new File("./resources/cs1.png")))));
        getContentPane().add(end, BorderLayout.SOUTH);
         end.add(bar, null);
         pack();

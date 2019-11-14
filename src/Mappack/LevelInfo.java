@@ -20,12 +20,12 @@ public class LevelInfo {
 
     public LevelInfo() throws IOException {
 
-        this.entityList.add(new Enemy(8, 8, new Texture("res/terrr.png", 64, 64)));
+        this.entityList.add(new Enemy(8, 8, new Texture("resources/terrr.png", 64, 64)));
         //Animation.Texture has to be 64
         //128 Works to?
-        this.entityList.add(new Enemy(10, 10, new Texture("res/terrr.png", 64, 64)));
-        this.entityList.add(new Powerup(2, 2, new Texture("res/rsz_powerup.png", 64, 64) ));
-        this.entityList.add(new BreakableWall(3.5,3.5,new Texture("res/BreakableWall.png", 64, 64) ));
+        this.entityList.add(new Enemy(10, 10, new Texture("resources/terrr.png", 64, 64)));
+        this.entityList.add(new Powerup(2, 2, new Texture("resources/rsz_powerup.png", 64, 64) ));
+        this.entityList.add(new BreakableWall(3.5,3.5,new Texture("resources/BreakableWall.png", 64, 64) ));
 
         for(Entity possibleEnemy : entityList){
             if(possibleEnemy instanceof Enemy ) this.actualenemiesList.add(possibleEnemy);

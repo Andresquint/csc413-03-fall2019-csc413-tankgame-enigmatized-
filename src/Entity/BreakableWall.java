@@ -50,7 +50,7 @@ public class BreakableWall extends Entity {
         if(this.health <=0){
             alive=false;
             try {
-                this.texture=new Texture("res/DeadPowerUp.png", 64, 64);
+                this.texture=new Texture("resources/DeadPowerUp.png", 64, 64);
             } catch (Exception e){
                 System.out.println("BREAKABLEWALL: Texture failed, texture didn't change after health went to zero");
             }
