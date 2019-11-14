@@ -1,7 +1,9 @@
 package Game;
 
 import Animation.Texture;
+import Entity.BreakableWall;
 import Entity.Bullet;
+import Entity.Entity;
 import Game.Game;
 import RayCasting.MathAssist;
 import Weapons.Weapon;
@@ -15,11 +17,15 @@ import java.io.IOException;
 
 public class Camera implements KeyListener{
     public double xPos, yPos, xDir, yDir, xPlane, yPlane;
+    public double startx, starty;
     public boolean left, right, forward, back;
     public double MOVE_SPEED = .08;
     public final double ROTATION_SPEED = .045;
     public boolean shooting=false;
     Weapon currentWeapon;
+    //extra lives
+    int lives=0;
+    double maxHealth;
 
 
     //Players health and gold
@@ -39,9 +45,13 @@ public class Camera implements KeyListener{
         yDir = yd;
         xPlane = xp;
         yPlane = yp;
+        startx=xPos;
+        starty=yPos;
 
 
         health=100;
+        maxHealth=health;
+
         currentWeapon = loadFist(); //Sets the default weapon
         currentWeapon.animation();
     }
@@ -100,18 +110,47 @@ public class Camera implements KeyListener{
             nextShotTime=now+shotTimeDelta;
 
         }
-        if(forward) {
-            if(map[(int)(xPos + xDir * MOVE_SPEED)][(int)yPos] == 0) {
-                xPos+=xDir*MOVE_SPEED;
+        //Can go forward if 1)will not collide with wall and 2)Will not collide with Breakable wall
+        if(forward){
+            if(map[(int)(xPos + xDir * MOVE_SPEED)][(int)yPos] == 0 ) {//&&(((int)breakable.xpos != (int)(xPos + xDir * MOVE_SPEED))
+                boolean move=true;
+                for(Entity e : Game.levelInfo.getEnemies()){
+                    if(e.collides((xPos + xDir * MOVE_SPEED), yPos)){
+                        move=false;
+                    }
+                }
+
+                if(move)xPos+=xDir*MOVE_SPEED;
             }
-            if(map[(int)xPos][(int)(yPos + yDir * MOVE_SPEED)] ==0)
-                yPos+=yDir*MOVE_SPEED;
+            if(map[(int)xPos][(int)(yPos + yDir * MOVE_SPEED)] ==0){//&&(((int)breakable.ypos != (int)(yPos + yDir * MOVE_SPEED)))
+                boolean move=true;
+                for(Entity e : Game.levelInfo.getEnemies()){
+                    if(e.collides(xPos, (yPos + yDir * MOVE_SPEED))){
+                        move=false;
+                    }
+                }
+                if(move)yPos+=yDir*MOVE_SPEED;
+            }
         }
         if(back) {
-            if(map[(int)(xPos - xDir * MOVE_SPEED)][(int)yPos] == 0)
-                xPos-=xDir*MOVE_SPEED;
-            if(map[(int)xPos][(int)(yPos - yDir * MOVE_SPEED)]==0)
-                yPos-=yDir*MOVE_SPEED;
+            if(map[(int)(xPos - xDir * MOVE_SPEED)][(int)yPos] == 0) {
+                boolean move=true;
+                for(Entity e : Game.levelInfo.getEnemies()){
+                    if(e.collides((xPos - xDir * MOVE_SPEED), yPos)){
+                        move=false;
+                    }
+                }
+               if(move) xPos -= xDir * MOVE_SPEED;
+            }
+            if(map[(int)xPos][(int)(yPos - yDir * MOVE_SPEED)]==0) {
+                boolean move=true;
+                for(Entity e : Game.levelInfo.getEnemies()){
+                    if(e.collides((xPos), yPos - yDir * MOVE_SPEED)){
+                        move=false;
+                    }
+                }
+                if(move)yPos -= yDir * MOVE_SPEED;
+            }
         }
         if(right) {
             double oldxDir=xDir;
@@ -179,10 +218,30 @@ public class Camera implements KeyListener{
     }
 
     public void checkBullet(double xpos, double ypos, int damage, boolean playerBullet) {
-        if (playerBullet && MathAssist.distanceBetweenPoints(xpos, ypos, this.xPos, this.yPos)<0.4) {
-            //damaged(damage);
+        System.out.println("New health" +health);
+        if (!playerBullet && MathAssist.distanceBetweenPoints(xpos, ypos, this.xPos, this.yPos)<0.4) {
+            damaged(damage);
         }
     }
+
+
+    public void damaged(double damage){
+        this.health-=damage;
+        if(health<=0){
+            if(lives>0){
+                this.xPos=startx;
+                this.yPos=starty;
+                health=(int)maxHealth;
+                lives--;
+            }else{
+               Game.gameOver();
+            }
+        }
+        //System.out.println("New health" +health);
+        //if(health<0) Game.gameover();
+    }
+
+
   //reworked the entire project
 
     public double getDistFromLine(double x1, double y1, double x2, double y2) {

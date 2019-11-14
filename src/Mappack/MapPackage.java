@@ -3,6 +3,8 @@ package Mappack;
 public class MapPackage {
 
     public static int[][] level1 =
+            //Breakable wall Spwan 3,3
+            //
             {
                     {1,1,1,1,1,1,1,1,2,2,2,2,2,2,2},
                     {1,0,0,0,0,0,0,0,0,0,0,0,0,0,2},

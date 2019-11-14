@@ -1,6 +1,7 @@
 package Entity;
 import Animation.Texture;
 import Animation.TextureAnimation;
+import RayCasting.MathAssist;
 
 import java.io.IOException;
 
@@ -136,10 +137,11 @@ public class Entity implements Comparable<Entity> {
 //    }
 
     public boolean alive() {
-        boolean alive = true;
-        if(health<=0)
-            alive = false;
-        return alive;
+       //boolean alive = true;
+//        if(health<=0)
+//            alive = false;
+        //return alive;
+        return health>0;
     }
 
     public double getDistFromLine(double x1, double y1, double x2, double y2) {
@@ -198,7 +200,18 @@ public class Entity implements Comparable<Entity> {
 
         return;
     }
+
+    public boolean collides(double xPos, double yPos) {
+        return MathAssist.distanceBetweenPoints(xPos, yPos, this.xPos, this.yPos)<this.width*2;
+    }
+
+    public int getPixel(int u, int v){
+        return texture.getPixel(u,v);
+    }
+
 }
+
+
 
 interface Arithmetic {
 

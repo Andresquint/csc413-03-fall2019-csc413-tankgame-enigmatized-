@@ -33,6 +33,7 @@ public class Game extends JFrame implements Runnable{
     public static Camera camera;
     public Screen screen;
     public static Map level;
+    static boolean dead=false;
 
     ArrayList<Entity> enemies;
     public static LevelInfo levelInfo;
@@ -48,7 +49,7 @@ public class Game extends JFrame implements Runnable{
 
     public Game() throws InterruptedException, IOException {
         new SplashPageDriver();
-
+        dead=false;
         levelInfo= new LevelInfo();
 
         Thread.sleep(2000);
@@ -102,7 +103,9 @@ public class Game extends JFrame implements Runnable{
         //Customize the x and Y for each weapon
         g.drawImage(camera.currentWeapon.getImage(), -67, 80, image.getWidth(), (int)(image.getHeight()*.95), null);
         //Health Bar for Player
-        g.drawImage(getSizeOf(0,0,(int)(136*camera.getHealth()), 36, "res/Interface/HealthBar.png"), (int)(screenWidth*.05), (int)(screenHeight*.90), (int)((screenWidth*.3445)*camera.getHealth()), (int)(screenHeight*.075), null);
+        if(camera.getHealth()>0){
+            g.drawImage(getSizeOf(0,0,(int)(136*camera.getHealth()), 36, "res/Interface/HealthBar.png"), (int)(screenWidth*.05), (int)(screenHeight*.90), (int)((screenWidth*.3445)*camera.getHealth()), (int)(screenHeight*.075), null);
+        }
         //
         //HealthBarFor enemy
         //g.drawImage(getSizeOf(0,0,(int)(136*camera.getHealth()), 36, "res/Interface/HealthBar.png"), (int)(screenWidth*.75), (int)(screenHeight*.90), (int)((screenWidth*.3445)*camera.getHealth()), (int)(screenHeight*.075), null);
@@ -116,19 +119,7 @@ public class Game extends JFrame implements Runnable{
         ////NOTE I WOULD IDEALLY LIKE TO GET THE ABOVE FOR LOOP WORKING, BUT I WILL HARDCODE The Bottom two lines for now
 
 
-        //Todo Huge error. I guess I delete the enemy when there health goes to zero.
-        //Maybe have a check here.
-        //To see if enemy is alive?
-        try {
-            g.drawImage(getSizeOf(0, 0, (int) (136 * levelInfo.getEnemies().get(0).getHealth()), 36, "res/Interface/EnemyHealthBar.png"), (int) (screenWidth * .55)/*Where health bar starts relative to screen width*/, (int) (screenHeight * .90), (int) ((screenWidth * .2) * levelInfo.getEnemies().get(0).getHealth()), (int) (screenHeight * .075), null);
-        } catch(Exception e){
-            g.drawImage(getSizeOf(0, 0, (int) (136 * 0.01), 36, "res/Interface/EnemyHealthBar.png"), (int) (screenWidth * .55)/*Where health bar starts relative to screen width*/, (int) (screenHeight * .90), (int) ((screenWidth * .2) * 0.01), (int) (screenHeight * .075), null);
-        }
-        try {
-            g.drawImage(getSizeOf(0, 0, (int) (136 * levelInfo.getEnemyFromEnemyList(1).getHealth()), 36, "res/Interface/EnemyHealthBar.png"), (int) (screenWidth * .55)/*Where health bar starts relative to screen width*/, (int) (screenHeight * .80), (int) ((screenWidth * .2) * levelInfo.getEnemyFromEnemyList(1).getHealth()), (int) (screenHeight * .075), null);
-        } catch(Exception e){
-            System.out.println("AtLeast you got one!");
-        }
+
         //
         bs.show();
     }
@@ -143,21 +134,22 @@ public class Game extends JFrame implements Runnable{
         double delta = 0;
         requestFocus();
         while(running) {
-            long now = System.nanoTime();
-            delta = delta + ((now-lastTime) / ns);
-            lastTime = now;
-            while (delta >= 1)//Make sure update is only happening 60 times a second
-            {
-                //Update Sprite
+            if(!dead) {
+                long now = System.nanoTime();
+                delta = delta + ((now - lastTime) / ns);
+                lastTime = now;
+                while (delta >= 1)//Make sure update is only happening 60 times a second
+                {
+                    //Update Sprite
 
-                //handles all of the logic restricted time
+                    //handles all of the logic restricted time
 
-                screen.update(camera, pixels);
-                camera.update(level.map, now);
+                    screen.update(camera, pixels);
+                    camera.update(level.map, now);
 
 
-                //Update Sprites
-                //BTW a java Stream would likely be better
+                    //Update Sprites
+                    //BTW a java Stream would likely be better
 
 
 //                for(int spriteNum=0;spriteNum<levelInfo.getEnemiesListSize();spriteNum++){
@@ -166,29 +158,35 @@ public class Game extends JFrame implements Runnable{
 //                }
 
 
-                //Used for testing Sprite Movement
-                if(tickCount>25){
-                    double finalDelta = delta;
-                    for(int i=0; i<levelInfo.getEnemies().size(); i++) {
-                        levelInfo.getEnemies().get(i).updateBehavior(finalDelta);
+                    //Used for testing Sprite Movement
+                    if (tickCount > 25) {
+                        double finalDelta = delta;
+                        for (int i = 0; i < levelInfo.getEnemies().size(); i++) {
+                            levelInfo.getEnemies().get(i).updateBehavior(finalDelta);
+                        }
+                        //levelInfo.getEnemies().stream().forEach(s -> s.updateBehavior(finalDelta));
+                        //levelInfo.getEnemies().get(0).updateBehavior();
+                        //levelInfo.getEnemyFromEnemyList(1).updateBehavior(delta);
+                        //levelInfo.getEnemyFromEnemyList(1).updatePlayer(delta);
+                        System.out.println("Updating Sprite Behavior");
+                        tickCount = 0;
                     }
-                    //levelInfo.getEnemies().stream().forEach(s -> s.updateBehavior(finalDelta));
-                    //levelInfo.getEnemies().get(0).updateBehavior();
-                    //levelInfo.getEnemyFromEnemyList(1).updateBehavior(delta);
-                    //levelInfo.getEnemyFromEnemyList(1).updatePlayer(delta);
-                    System.out.println("Updating Sprite Behavior");
-                tickCount=0;
+
+                    tickCount++;
+                    delta--;
+
                 }
-
-                tickCount++;
-                delta--;
-
-            }
-            try {
-                render();//displays to the screen unrestricted time
-            } catch (IOException e) {
-                System.out.println("Oh shit rendering error, probably a loading image error from health bar");
-                e.printStackTrace();
+                try {
+                    render();//displays to the screen unrestricted time
+                } catch (IOException e) {
+                    System.out.println("Oh shit rendering error, probably a loading image error from health bar");
+                    e.printStackTrace();
+                }
+            } else{
+                //Todo
+                //GameOverPageDriver ->make
+                new SplashPageDriver();
+                running=false;
             }
         }
     }
@@ -233,6 +231,10 @@ public class Game extends JFrame implements Runnable{
         Graphics g = toReturn.getGraphics();
         g.drawImage(img, 0, 0, null);
         return toReturn;
+    }
+
+    public static void gameOver(){
+        dead=true;
     }
 
 

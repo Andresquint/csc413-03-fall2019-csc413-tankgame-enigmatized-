@@ -2,17 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8d46bb1f-080a-4e39-9486-c031e5c57bac" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/Entity/BreakableWall.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/CSC413-game/READ.me" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CSC413-game/READ.me" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/Interface/Interface.png" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Animation/TextureAnimation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Animation/TextureAnimation.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Entity/Bullet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Bullet.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Entity/Enemy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Enemy.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Entity/Entity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Entity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/Powerup.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Powerup.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Game/Camera.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game/Camera.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Game/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game/Game.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Game/Screen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game/Screen.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Mappack/LevelInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Mappack/LevelInfo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Mappack/MapPackage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Mappack/MapPackage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/READ.me" beforeDir="false" afterPath="$PROJECT_DIR$/src/READ.me" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -156,6 +157,9 @@
       </list>
     </recent_temporary>
   </component>
+  <component name="StructureViewFactory">
+    <option name="ACTIVE_ACTIONS" value=",SHOW_INHERITED" />
+  </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -296,6 +300,14 @@
       <workItem from="1573668042550" duration="1829000" />
       <workItem from="1573671495451" duration="1900000" />
       <workItem from="1573673990808" duration="1790000" />
+      <workItem from="1573676228783" duration="1790000" />
+      <workItem from="1573678064621" duration="1798000" />
+      <workItem from="1573687622702" duration="1794000" />
+      <workItem from="1573689522287" duration="1789000" />
+      <workItem from="1573691337110" duration="1806000" />
+      <workItem from="1573693168460" duration="1788000" />
+      <workItem from="1573694985849" duration="1855000" />
+      <workItem from="1573697099674" duration="568000" />
     </task>
     <task id="LOCAL-00001" summary="Getting a health bar working">
       <created>1572812815636</created>
@@ -367,7 +379,14 @@
       <option name="project" value="LOCAL" />
       <updated>1573623317407</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Got Powerups working!">
+      <created>1573676393408</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1573676393408</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -392,6 +411,7 @@
     <MESSAGE value="Put Everything in packages" />
     <MESSAGE value="Created a Sprite Movement Class" />
     <MESSAGE value="Got MiniMap Working!" />
-    <option name="LAST_COMMIT_MESSAGE" value="Got MiniMap Working!" />
+    <MESSAGE value="Got Powerups working!" />
+    <option name="LAST_COMMIT_MESSAGE" value="Got Powerups working!" />
   </component>
 </project>

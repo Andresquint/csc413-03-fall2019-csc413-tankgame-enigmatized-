@@ -4,6 +4,7 @@ import Animation.Texture;
 import Entity.Enemy;
 import Entity.Entity;
 import Entity.Powerup;
+import Entity.BreakableWall;
 
 
 import java.io.IOException;
@@ -12,19 +13,21 @@ import java.util.List;
 
 public class LevelInfo {
 
-    private List<Entity> enemiesList = new ArrayList<>();
+    private List<Entity> entityList = new ArrayList<>();
     private List<Entity> actualenemiesList = new ArrayList<>();
+
 
 
     public LevelInfo() throws IOException {
 
-        this.enemiesList.add(new Enemy(8, 8, new Texture("res/terrr.png", 64, 64)));
+        this.entityList.add(new Enemy(8, 8, new Texture("res/terrr.png", 64, 64)));
         //Animation.Texture has to be 64
         //128 Works to?
-        this.enemiesList.add(new Enemy(10, 10, new Texture("res/terrr.png", 64, 64)));
-        this.enemiesList.add(new Powerup(2, 2, new Texture("res/rsz_powerup.png", 64, 64) ));
+        this.entityList.add(new Enemy(10, 10, new Texture("res/terrr.png", 64, 64)));
+        this.entityList.add(new Powerup(2, 2, new Texture("res/rsz_powerup.png", 64, 64) ));
+        this.entityList.add(new BreakableWall(3.5,3.5,new Texture("res/BreakableWall.png", 64, 64) ));
 
-        for(Entity possibleEnemy : enemiesList){
+        for(Entity possibleEnemy : entityList){
             if(possibleEnemy instanceof Enemy ) this.actualenemiesList.add(possibleEnemy);
 
         }
@@ -32,7 +35,7 @@ public class LevelInfo {
     }
 
     public List<Entity> getEnemies() {
-        return enemiesList;
+        return entityList;
     }
 
     public List<Entity> getActualEnemies(){
@@ -40,16 +43,26 @@ public class LevelInfo {
     }
 
     public Entity getEnemyFromEnemyList(int num) {
-        return enemiesList.get(num);
+        return entityList.get(num);
     }
 
     public int getEnemiesListSize() {
-        return enemiesList.size();
+        return entityList.size();
     }
 
     public void removeEntity(Entity removing){
-        enemiesList.remove(removing);
-
+        entityList.remove(removing);
     }
+
+    public boolean hasInstanceOFBreakableWall(){
+        return entityList.stream().anyMatch(c ->(c instanceof BreakableWall)  );
+    }
+
+    public boolean hasInstanceOFBreakableWallThatisAlive(){
+        return (entityList.stream().anyMatch(c ->(c instanceof BreakableWall)&& c.health>=0));
+    }
+
+
+
 
 }

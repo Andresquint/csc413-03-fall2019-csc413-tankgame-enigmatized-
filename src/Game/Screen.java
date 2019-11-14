@@ -193,15 +193,17 @@ public class Screen {
             double wallDeltaX;
             double wallDeltaY;
             double wallX;//Exact position of where wall was hit
+
+
             if (side == 1) {//If its a y-axis wall
                 wallX = (camera.xPos + ((mapY - camera.yPos + (1 - stepY) / 2) / rayDirY) * rayDirX);
                 //Getting exact position on the wall it is hitting
                 wallDeltaX = wallX - Math.floor(wallX);
-                wallDeltaY = (stepX == -1) ? 0 : 1;
+                wallDeltaY = (stepY == -1) ? 1 : 0;//
             } else {//X-axis wall
                 wallX = (camera.yPos + ((mapX - camera.xPos + (1 - stepX) / 2) / rayDirX) * rayDirY);
                 wallDeltaY = wallX - Math.floor(wallX);
-                wallDeltaX = (stepY == -1) ? 0 : 1;
+                wallDeltaX = (stepX == -1) ? 1 : 0;
             }
             wallX -= Math.floor(wallX);//point value
             //x coordinate on the texture
@@ -261,7 +263,7 @@ public class Screen {
                     //Animation.Texture texture = enemy.getTexture();
 
                     // draw the sprite
-                    Texture texture = enemy.getTexture();
+                   Texture texture = enemy.getTexture();
 
                     double perpEnemyDist = MathAssist.distanceBetweenPoints(camera.xPos, camera.yPos, enemy.xPos, enemy.yPos);
                     if (perpEnemyDist > 0) lineHeight = Math.abs((int) (height / perpEnemyDist));
@@ -299,7 +301,7 @@ public class Screen {
                             //This is the problem child!!!
 
                             //Try catch block returns black
-                            int texel = /*Color.WHITE.getRGB();*/ texture.getPixel(u, v);//When I make u -> X it renders the more correct image, but slow as shit
+                            int texel = /*Color.WHITE.getRGB();*/ enemy.getPixel(u, v);//When I make u -> X it renders the more correct image, but slow as shit
 
                             //How would you fix that?
                             //I think it has to be relative to X

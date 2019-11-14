@@ -5,6 +5,7 @@ import Animation.TextureAnimation;
 import Game.Game;
 import Health.*;
 
+import java.awt.*;
 import java.io.IOException;
 
 import RayCasting.MathAssist;
@@ -26,12 +27,15 @@ public class Enemy extends Movers {
     boolean left=true;
     boolean shooting=false;
 
-    double MOVE_SPEED=0.16;
-    double ROTATION_SPEED=0.095;
+    double MOVE_SPEED=0.25;
+    double ROTATION_SPEED=0.120;/*0.095;*/
 
     double lastShot;
     double nextShot=1.5;
     double shootDistance=2.0;
+
+
+    double maxHealth;
 
 
 
@@ -81,7 +85,9 @@ public class Enemy extends Movers {
         super(xPosition, yPosition, texture, 0, 0);
 
         //this.texture = texture;
-        this.health=100;
+        this.health=1000;
+        //Change max health for fully change gameplay bar health
+        this.maxHealth=1000;
         this.health2= new Health(100);
         xDir=1;
 
@@ -108,6 +114,7 @@ public class Enemy extends Movers {
 
            // persue(delta);
           //  randomMovement();
+            texture=walkingAnimation.Animate();
 
             updatePlayer(delta);
             updatepostions(Game.level.map);
@@ -223,6 +230,7 @@ public class Enemy extends Movers {
      */
     protected void loadAnimations() throws IOException {
         seezure = new TextureAnimation("s", "r", 3,  5, true);
+        walkingAnimation= TextureAnimation.enemyAlive;
        // attackAnimation = new Animation.TextureAnimation("res/MechCon.png", 1);
         dyingAnimation = new TextureAnimation("res/Spider/deadSpider.png",1, 5,false);
     }
@@ -243,6 +251,17 @@ public class Enemy extends Movers {
         return this.texture= new Texture( "res/3232.png", 16, 16);
     }
 
+    public int getPixel(int u, int v){
+        int p= texture.getPixel(u,v);
+        int b=(int)(texture.getHeight()*0.95);
+        if(v<b){
+            return p;
+        }
+        double pWidth=texture.getWidth()/maxHealth;
+        if(u < (pWidth*health)){ return Color.RED.getRGB();}
+        else return Color.BLACK.getRGB();
+
+    }
 
 
     public void updatepostions(int[][] map){

@@ -88,6 +88,22 @@ public class TextureAnimation {
         //System.out.println("Loaded Textures for: " + s);
     }
 
+
+    public TextureAnimation(Texture[] s, int frameDelay, boolean loopable) throws IOException {
+        this.frameDelay = frameDelay;
+        looping = loopable;
+        animationFrames = new ArrayList<>();
+        currentFrame = 0;
+        for(int i = 0; i < s.length; i++){
+           animationFrames.add(s[i]);
+        }
+        //System.out.println("Loaded Textures for: " + s);
+    }
+
+
+
+
+
     /**
      * Cycles the animation, returning the next image of
      * the spreadsheet. Will reset the animation if
@@ -96,23 +112,23 @@ public class TextureAnimation {
      * @return Current frame of animation.
      */
     public Texture Animate(){
-        ensureCurrentFrame();
-
-        for(int i =0; i<2; i++){
-            int randomInteger= random.nextInt(3);
-            System.out.println("pseudo random int in a range : " + randomInteger);
-            rand= randomInteger;
-        }
 
 
+//        for(int i =0; i<2; i++){
+//            int randomInteger= random.nextInt(3);
+//            System.out.println("pseudo random int in a range : " + randomInteger);
+//            rand= randomInteger;
+//        }
 
-        Texture result = animationFrames.get(rand);
-        if(timer%frameDelay == 0){
-            timer = 1;
+//        Texture result = animationFrames.get(rand);
+
+        if(timer>frameDelay){
+            timer =0;
             currentFrame++;
         }
         timer++;
-        return result;
+        ensureCurrentFrame();
+        return animationFrames.get(currentFrame);
     }
 
 
@@ -123,8 +139,7 @@ public class TextureAnimation {
      * its limit of frames.
      */
     public void ensureCurrentFrame(){
-        if(currentFrame>=animationFrames.size())
-            currentFrame = looping? 0: animationFrames.size()-1;
+        currentFrame =currentFrame%animationFrames.size();
     }
 
     /**
@@ -157,4 +172,28 @@ public class TextureAnimation {
         System.out.println("Loaded Textures for: " );
     }
 
+
+
+    public static TextureAnimation enemyAlive;
+    static {
+        try {
+            Texture[] t={ new Texture("res/WalkingDude/rsz_1robot1.png", 64, 64),
+                        new Texture("res/rsz_terrorist.png", 64, 64)};
+            enemyAlive= new TextureAnimation(t, 2, true);
+           } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+    }
+
+
+
+
+
+
+
+
 }
+
+
+

@@ -4,6 +4,7 @@ package Entity;
 
 import Animation.Texture;
 import Game.Game;
+import RayCasting.MathAssist;
 //https://www.piskelapp.com/
 import java.io.IOException;
 
@@ -57,7 +58,9 @@ public class Bullet extends Movers {
     }
 
 
-
+    public boolean collides(double xPos, double yPos) {
+        return false;
+    }
 
 
     public void updatePlayer(){}
