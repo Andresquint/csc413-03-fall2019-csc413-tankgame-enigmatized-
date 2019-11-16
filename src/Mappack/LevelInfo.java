@@ -62,7 +62,10 @@ public class LevelInfo {
         return (entityList.stream().anyMatch(c ->(c instanceof BreakableWall)&& c.health>=0));
     }
 
+    public boolean checkIfEnemiesAreAlive(){
+        return (actualenemiesList.stream().allMatch(c-> (c.health <=0)));
 
+    }
 
 
 }

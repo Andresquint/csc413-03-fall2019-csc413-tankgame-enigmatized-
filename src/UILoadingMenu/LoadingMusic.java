@@ -12,7 +12,7 @@ import javax.sound.sampled.UnsupportedAudioFileException;
 public class LoadingMusic {
     private Clip clip;
 
-    protected LoadingMusic() {
+    public LoadingMusic() {
         // <-------For DEbugging------->
         //System.out.println(getClass().getName() + " : " + Debug.getCallerCallerClassName());
         //new Debug().getTime();

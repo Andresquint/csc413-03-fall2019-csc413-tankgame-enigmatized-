@@ -243,10 +243,7 @@ public class Enemy extends Movers {
     }
 
     /**
-     * Consults the animation and sets the next frame
-     * of the walking animation to advance by one. Is
-     * designed to be called continuously every 1/60th
-     * of a second.
+     * ................
      */
     protected void animation(){
         this.texture = walkingAnimation.Animate();
@@ -257,6 +254,14 @@ public class Enemy extends Movers {
         //Not 100% on how one would best handle that issue?
         return this.texture= new Texture( "resources/3232.png", 16, 16);
     }
+
+    /**
+     * Recently Modified
+     * This helps get the image of enemy
+     * But scales it so there is room for health bar to be rendered below enemy
+     * It is used in Class Screen, master rendering class,
+     * and this return is placed in Screen's pixel array(which is the player's screen)
+     */
 
     public int getPixel(int u, int v){
         int p= texture.getPixel(u,v);

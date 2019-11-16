@@ -1,12 +1,8 @@
 package UILoadingMenu;
 
-import com.sun.glass.ui.Pixels;
-import javafx.scene.control.ProgressBar;
+import UILoadingMenu.Trashextra.Iconz;
 
 import javax.imageio.ImageIO;
-import javax.swing.*;
-import java.awt.*;
-import java.awt.image.BufferedImage;
 import java.io.File;
 import java.net.URL;
 

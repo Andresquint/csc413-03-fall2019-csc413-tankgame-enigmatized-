@@ -10,6 +10,17 @@ import java.util.ArrayList;
 import java.awt.Color;
 import java.util.Collections;
 
+/**
+ * This is by far the most complicated class
+ * This render's the video game players screen
+ * This makes the game first person
+ * via ray casting
+ * This is 2d-raycasting
+ * To give the size change of enmies, for the feel of depth
+ * it scales 2d images
+ *
+ * Blood is still left on the keyboard
+ */
 
 
 
@@ -66,6 +77,12 @@ public class Screen {
 
     }
 
+
+    /**
+     * Apart of rayCasting is knowing what side of a grid is hit first
+     * @param y
+     * @return
+     */
     private int clipVertically(int y) {
         return (y >= height) ? height - 1 : (y < 0) ? 0 : y;
     }
@@ -73,6 +90,17 @@ public class Screen {
     private int clipHorizontally(int x) {
         return (x >= width) ? width - 1 : (x < 0) ? 0 : x;
     }
+
+    /**
+     * This is THE FUNCTION
+     * It does things in multi steps within many for loops
+     * 1.Prints the ground and sky first
+     * 2. Starts sending a ray out
+     * 3. prints the first thing the ray bumps into
+     * @param camera
+     * @param pixels
+     * @return
+     */
 
     public int[] update(Camera camera, int[] pixels) {
         //Note: screen renders half the screen two different colors first
@@ -90,15 +118,10 @@ public class Screen {
 
 
         for (int x = 0; x < width; x = x + 1) {     //Width=ScreenWidth is set for 640
-            //Not 100% sure what this line is?
             // oh. so we are dividing by width, -1, but I don't totally get?
-            //Todo
-            //Get this line?
             //It used for the trig like function below
             double cameraX = 2 * x / (double) (width) - 1;//The current vertical slice.-->OH VERTICAL SLICE OF CAMERA VIEW!!!
 
-            //oh So it is the ray for the specific pixil that it is at?
-            //Wait so this is is a flor floop, oh gosh I think I get why this is so slow down below
 
             //Creates a ray vector that will be "casted" into the environment
             double rayDirX = camera.xDir + camera.xPlane * cameraX;
@@ -107,8 +130,7 @@ public class Screen {
 
             //Mappack.Map position
             //Mappack.Map position means within the array of MAP
-            //Confusion: how is camerea able to give its map array cordinates?
-            //AKA how are they related
+            //getting the video game player's cordinates
             mapX = (int) camera.xPos;
             mapY = (int) camera.yPos;
 

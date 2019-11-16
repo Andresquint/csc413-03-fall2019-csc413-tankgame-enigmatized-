@@ -1,4 +1,4 @@
-package UILoadingMenu;
+package UILoadingMenu.Trashextra;
 
 
 import java.awt.event.ActionListener;
@@ -7,6 +7,8 @@ import java.io.InputStream;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 
+import Game.Game;
+import UILoadingMenu.LoadingMusic;
 import javafx.application.*;
 import javafx.stage.*;
 import javafx.geometry.*;
@@ -33,7 +35,7 @@ public class main1 extends Application{
 
         root.setPrefSize(1050, 600);
 
-        try(InputStream is = Files.newInputStream(Paths.get("res/cs.png"))){
+        try(InputStream is = Files.newInputStream(Paths.get("resources/cs.png"))){
             ImageView img = new ImageView(new Image(is));
             img.setFitWidth(1050);
             img.setFitHeight(600);
@@ -156,6 +158,7 @@ public class main1 extends Application{
                 //Make this a hashmap, or seperate method.
                 //Also this is the game will play multiple maps
                 if(this.name.equals("Play De_Dust")) System.out.println(" Play De_Dust");
+                if(this.name.equals("Play Space_Ship")) ;
 
             });
 

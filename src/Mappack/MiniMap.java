@@ -18,6 +18,12 @@ public class MiniMap {
     private static int xpos=500;
     private static int ypos=75;
 
+    /**
+     * THe only worthy note on design about this class
+     * is the fact that this gets rendered in screen
+     * NOT  as a panel loaded on top of a panel
+     */
+
 
     int SIZE;
     int Mappixel[][];

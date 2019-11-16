@@ -1,4 +1,4 @@
-package UILoadingMenu;
+package UILoadingMenu.Trashextra;
 
 import javax.imageio.ImageIO;
 
@@ -10,10 +10,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * <strong>Project:</strong> Game.Game <br>
- * <strong>File:</strong> Animation.Texture.java
- *
- * @author <a href = "http://redthirddivision.com/team/blp"> Matthew Rogers</a>
+ * http://redthirddivision.com/team/blp"> Matthew Rogers</a>
  */
 public class ImageGetting {
 

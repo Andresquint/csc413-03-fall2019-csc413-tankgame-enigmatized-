@@ -6,31 +6,34 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8d46bb1f-080a-4e39-9486-c031e5c57bac" name="Default Changelist" comment="Improving Sprite walking">
-      <change afterPath="$PROJECT_DIR$/.idea/artifacts/CSC413_game_jar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/META-INF/MANIFEST.MF" afterDir="false" />
+    <list default="true" id="8d46bb1f-080a-4e39-9486-c031e5c57bac" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CSC413-game.iml" beforeDir="false" afterPath="$PROJECT_DIR$/CSC413-game.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CSC413-game/RayCasting/Point.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CSC413-game/RayCasting/Point.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CSC413-game/RayCasting/RayCast.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CSC413-game/RayCasting/RayCast.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CSC413-game/RayCasting/Vector.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CSC413-game/RayCasting/Vector.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CSC413-game/UILoadingMenu/Example$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CSC413-game/UILoadingMenu/Example.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sound/ExplosionWarning.wav" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sound/ExplosionWarning.wav" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sound/Shoot.wav" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sound/Shoot.wav" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Animation/ImageAnimation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Animation/ImageAnimation.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Animation/Texture.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Animation/Texture.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Animation/TextureAnimation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Animation/TextureAnimation.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Collision/Collision.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Collision/Collision.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/BreakableWall.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/BreakableWall.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CSC413-game/UILoadingMenu/Iconz.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CSC413-game/UILoadingMenu/ImageGetting.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CSC413-game/UILoadingMenu/LoadingMusic.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CSC413-game/UILoadingMenu/LoadingMusic.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CSC413-game/UILoadingMenu/SplashPage$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CSC413-game/UILoadingMenu/SplashPage$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CSC413-game/UILoadingMenu/SplashPage.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CSC413-game/UILoadingMenu/SplashPage.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CSC413-game/UILoadingMenu/SplashPageDriver.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CSC413-game/UILoadingMenu/Test.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CSC413-game/UILoadingMenu/main1$MenuBox.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CSC413-game/UILoadingMenu/main1$MenuItem.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CSC413-game/UILoadingMenu/main1$Title.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CSC413-game/UILoadingMenu/main1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/Interface/Armor Bar.png" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Entity/Enemy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Enemy.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/Entity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Entity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Game/Camera.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game/Camera.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Game/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game/Game.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Game/Screen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game/Screen.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Health/Health.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Health/Health.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/RayCasting/RayCast.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/RayCasting/RayCast.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/RayCasting/Vector.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/RayCasting/Vector.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/UILoadingMenu/Example.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/UILoadingMenu/Trashextra/Example.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Game/Source" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Mappack/LevelInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Mappack/LevelInfo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Mappack/Map.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Mappack/Map.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Mappack/MapPackage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Mappack/MapPackage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Mappack/MiniMap.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Mappack/MiniMap.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/UILoadingMenu/Iconz.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/UILoadingMenu/Trashextra/Iconz.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/UILoadingMenu/ImageGetting.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/UILoadingMenu/Trashextra/ImageGetting.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/UILoadingMenu/LoadingMusic.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/UILoadingMenu/LoadingMusic.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/UILoadingMenu/SplashPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/UILoadingMenu/SplashPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/UILoadingMenu/SplashPageDriver.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/UILoadingMenu/Trashextra/SplashPageDriver.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/UILoadingMenu/main1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/UILoadingMenu/Trashextra/main1.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -87,20 +90,20 @@
     <property name="settings.editor.selected.configurable" value="AndroidSdkUpdater" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\garre\CSC413-game\res" />
+      <recent name="C:\Users\garre\CSC413-game\sound" />
+      <recent name="C:\Users\garre\CSC413-game\res\Weapons" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\garre\CSC413-game\resources" />
       <recent name="C:\Users\garre\CSC413-game" />
       <recent name="C:\Users\garre\CSC413-game\src\Game" />
       <recent name="C:\Users\garre\CSC413-game\src\Mappack" />
       <recent name="C:\Users\garre\CSC413-game\src\UILoadingMenu" />
-    </key>
-    <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\garre\CSC413-game\res" />
-      <recent name="C:\Users\garre\CSC413-game\sound" />
-      <recent name="C:\Users\garre\CSC413-game\res\Weapons" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -144,7 +147,7 @@
       </method>
     </configuration>
     <configuration name="main1" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="UILoadingMenu.main1" />
+      <option name="MAIN_CLASS_NAME" value="UILoadingMenu.Trashextra.main1" />
       <module name="CSC413-game" />
       <extension name="coverage">
         <pattern>
@@ -163,9 +166,9 @@
     <recent_temporary>
       <list>
         <item itemvalue="Application.Game" />
+        <item itemvalue="Application.main1" />
         <item itemvalue="Application.Example" />
         <item itemvalue="JAR Application.CSC413-game.jar" />
-        <item itemvalue="Application.main1" />
         <item itemvalue="Application.Main1" />
       </list>
     </recent_temporary>
@@ -328,6 +331,8 @@
       <workItem from="1573774094927" duration="1627000" />
       <workItem from="1573775912947" duration="1004000" />
       <workItem from="1573871155220" duration="1791000" />
+      <workItem from="1573872972445" duration="1787000" />
+      <workItem from="1573874784242" duration="1417000" />
     </task>
     <task id="LOCAL-00001" summary="Getting a health bar working">
       <created>1572812815636</created>
@@ -420,7 +425,14 @@
       <option name="project" value="LOCAL" />
       <updated>1573770712403</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="Documentation">
+      <created>1573873097000</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1573873097000</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -448,6 +460,7 @@
     <MESSAGE value="Got Powerups working!" />
     <MESSAGE value="Now working: breaking wall, enemy Health bar, my lives, my health bar" />
     <MESSAGE value="Improving Sprite walking" />
-    <option name="LAST_COMMIT_MESSAGE" value="Improving Sprite walking" />
+    <MESSAGE value="Documentation" />
+    <option name="LAST_COMMIT_MESSAGE" value="Documentation" />
   </component>
 </project>

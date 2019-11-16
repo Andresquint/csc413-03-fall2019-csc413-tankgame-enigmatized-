@@ -1,5 +1,14 @@
 package Mappack;
 
+/**
+ * This is the map
+ * zer0 means no wall
+ * One stands for wooden wall
+ * Two
+ * THree
+ * Breakable walls have nothing to do with this proccess
+ */
+
 public class MapPackage {
 
     public static int[][] level1 =

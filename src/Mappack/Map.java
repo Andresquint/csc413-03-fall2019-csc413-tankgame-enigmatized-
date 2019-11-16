@@ -1,5 +1,9 @@
 package Mappack;
 
+/**
+ * Abstracted the game map out
+ */
+
 public class Map {
 
 

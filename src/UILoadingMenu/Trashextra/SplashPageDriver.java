@@ -1,4 +1,4 @@
-package UILoadingMenu;
+package UILoadingMenu.Trashextra;
 
 import UILoadingMenu.SplashPage;
 

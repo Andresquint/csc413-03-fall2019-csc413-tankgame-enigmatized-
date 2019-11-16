@@ -1,4 +1,4 @@
-package UILoadingMenu;
+package UILoadingMenu.Trashextra;
 
 import javax.imageio.ImageIO;
 import javax.swing.*;

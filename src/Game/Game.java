@@ -2,7 +2,7 @@ package Game;
 
 import Animation.Texture;
 import Entity.Entity;
-import UILoadingMenu.SplashPageDriver;
+import UILoadingMenu.Trashextra.SplashPageDriver;
 
 import java.awt.*;
 import java.awt.image.BufferStrategy;
@@ -17,7 +17,6 @@ import javax.swing.*;
 
 
 import Mappack.*;
-import Game.Screen;
 
 
 public class Game extends JFrame implements Runnable{
@@ -134,7 +133,7 @@ public class Game extends JFrame implements Runnable{
         double delta = 0;
         requestFocus();
         while(running) {
-            if(!dead) {
+            if(!dead && !levelInfo.checkIfEnemiesAreAlive()) {
                 long now = System.nanoTime();
                 delta = delta + ((now - lastTime) / ns);
                 lastTime = now;
@@ -187,6 +186,7 @@ public class Game extends JFrame implements Runnable{
                 //GameOverPageDriver ->make
                 new SplashPageDriver();
                 running=false;
+                System.out.println("CONGRATS!!! YOU WON!!!\n You killed all the enemies");
             }
         }
     }
