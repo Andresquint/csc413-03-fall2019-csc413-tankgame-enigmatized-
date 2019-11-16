@@ -1,4 +1,4 @@
-package UILoadingMenu;
+package UILoadingMenu.Trashextra;
 
 import javafx.event.ActionEvent;
 

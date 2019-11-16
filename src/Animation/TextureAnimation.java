@@ -8,9 +8,7 @@ import java.util.Random;
 /**
  * Object that stores an image with a given filname
  * and creates a "flipbook" effect via a creation of
- * frames from the original image. This is designed
- * to be done at a rate of 60 frames per second outside
- * of this Object.
+ * frames from the original image.
  */
 public class TextureAnimation {
     //Default and custom delays between frames
@@ -22,6 +20,7 @@ public class TextureAnimation {
     //current frame of animation and animation frames
     int currentFrame;
     ArrayList<Texture> animationFrames;
+    //I got a little lazy, this is what shows when the enemy dies.
     Texture[] myAnimation= new Texture[]{new Texture("resources/rsz_powerup.png", 64, 64), Texture.stone, new Texture("resources/WalkingDude/rsz_1robot1.png", 64, 64)  };
     Texture[] myPowerUpAnime=new Texture[]{new Texture("resources/rsz_powerup.png", 64, 64),};
     //Name of animation spreadsheet
@@ -38,10 +37,6 @@ public class TextureAnimation {
 
 
     /**
-     * Creates an animation with a default frame delay,
-     * a desired animation spreadsheet, and a certain
-     * amount of frames
-     *
      * @param s Name of file
      * @param frameNum number of frames
      */
@@ -85,7 +80,16 @@ public class TextureAnimation {
         //System.out.println("Loaded Textures for: " + s);
     }
 
-
+    /**
+     * Creates an animation with a default frame delay,
+     * a desired animation spreadsheet, a certain amount
+     * of frames, a specific frame delay, and whether or
+     * not the animation is loopable.
+     *
+     * @param s Array of Texture, Think of this as the flip book to flip through
+     * @param frameDelay Amount of time between frames
+     * @param loopable Specifies if animation is loopable
+     */
     public TextureAnimation(Texture[] s, int frameDelay, boolean loopable) throws IOException {
         this.frameDelay = frameDelay;
         looping = loopable;
@@ -98,9 +102,6 @@ public class TextureAnimation {
     }
 
 
-
-
-
     /**
      * Cycles the animation, returning the next image of
      * the spreadsheet. Will reset the animation if
@@ -109,7 +110,8 @@ public class TextureAnimation {
      * @return Current frame of animation.
      */
     public Texture Animate(){
-
+            //LEFT OVER CODE FROM MAKE CODE CLEANER
+            //SAVING IT JUST INCASE SOMETHING STOPS WORKING, can always go back to this version
 
 //        for(int i =0; i<2; i++){
 //            int randomInteger= random.nextInt(3);
@@ -190,6 +192,10 @@ public class TextureAnimation {
                         new Texture("resources/WalkingEnemy/rsz_walking2.png", 64, 64),
                         new Texture("resources/WalkingEnemy/rsz_walking_3.png", 64, 64),
                         new Texture("resources/WalkingEnemy/rsz_walking4.png", 64, 64)};
+            //TODO change this
+            //this literally changes the above and might mess up if compiled somewhere else
+            //If you don't know what I am refering to, notice how enemyWalking isn't used, and enemyAlive is change in the code below
+            //THe trials and tribulations of copy and paste
             enemyAlive= new TextureAnimation(t, 2, true);
         } catch (IOException e) {
             e.printStackTrace();

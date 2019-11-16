@@ -8,13 +8,8 @@ import java.io.IOException;
 import javax.imageio.*;
 
 /**
- * Object that stores an image with a given filname
- * and creates a "flipbook" effect via a creation of
- * frames from the original image. This is designed
- * to be done at a rate of 60 frames per second outside
- * of this Object.
- *
- * @author Michael Mueller, Paul Coen, Dakota Oria
+ * Very Similiar to TextureAnimation
+ * This is used for weapon
  *
  */
 public class ImageAnimation {
@@ -36,39 +31,23 @@ public class ImageAnimation {
     //The height of the cell
     int height;
 
-    /**
-     * Creates an animation with a default frame delay,
-     * a desired animation spreadsheet, and a certain
-     * amount of frames
-     *
-     * @param s Name of file
-     * @param frameNum number of frames
-     * @throws IOException
-     */
+
     public ImageAnimation(String s, int frameNum) throws IOException{
         this(s, frameNum, FRAME_DELAY);
     }
 
     /**
-     * Creates an animation with a default frame delay,
-     * a desired animation spreadsheet, a certain amount
-     * of frames, and a specific frame delay.
-     *
      * @param s Name of file
      * @param frameNum Number of frames
      * @param frameDelay Amount of time between frames
      * @throws IOException
      */
+
     public ImageAnimation(String s, int frameNum, int frameDelay) throws IOException{
         this(s, frameNum, frameDelay, false);//assumes that the animation is loopable
     }
 
     /**
-     * Creates an animation with a default frame delay,
-     * a desired animation spreadsheet, a certain amount
-     * of frames, a specific frame delay, and whether or
-     * not the animation is loopable.
-     *
      * @param s Name of file
      * @param frameNum Number of frames
      * @param frameDelay Amount of time between frames

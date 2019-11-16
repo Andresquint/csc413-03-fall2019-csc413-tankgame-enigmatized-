@@ -85,9 +85,9 @@ public class Enemy extends Movers {
         super(xPosition, yPosition, texture, 0, 0);
 
         //this.texture = texture;
-        this.health=1000;
+        this.health=200;
         //Change max health for fully change gameplay bar health
-        this.maxHealth=1000;
+        this.maxHealth=200;
         this.health2= new Health(100);
         xDir=1;
 
@@ -229,9 +229,16 @@ public class Enemy extends Movers {
      * "lifespan".
      */
     protected void loadAnimations() throws IOException {
+        //Todo
+        //improve serzure
         seezure = new TextureAnimation("s", "r", 3,  5, true);
         walkingAnimation= TextureAnimation.enemyAlive;
        // attackAnimation = new Animation.TextureAnimation("res/MechCon.png", 1);
+
+        //Todo,
+        //Better dying sprite
+        //Better SHooting Sprite
+        //
         dyingAnimation = new TextureAnimation("resources/Spider/deadSpider.png",1, 5,false);
     }
 
@@ -307,7 +314,7 @@ public class Enemy extends Movers {
     public void attack() throws IOException {
 
 
-        Game.playSound("sound/Shoot.wav");
+        Game.playSound("resources/sound/Shoot.wav");
         Game.levelInfo.getEnemies().add(new Bullet(this.xPos, this.yPos, new Texture("resources/bullet.png.png", 64), xDir, yDir, false, 10));
 
     }

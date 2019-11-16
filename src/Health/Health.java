@@ -5,6 +5,17 @@ import Animation.*;
 
 
 
+
+/**
+ //I left this here.
+ //I wasn't sure to abstract health out.
+ //It seem like too much extra crap/over-abstraction
+ //I began to, the dropped this
+ //Left the code here for possible future use depending on the next game
+ */
+
+
+
 public class Health {
     double health=100;
 

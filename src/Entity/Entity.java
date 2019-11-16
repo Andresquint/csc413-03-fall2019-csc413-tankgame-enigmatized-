@@ -5,6 +5,11 @@ import RayCasting.MathAssist;
 
 import java.io.IOException;
 
+/**
+ * The Base class in which all Enities(breakable walls, enemies, bullets, powerups) classes inherit from.
+ *
+ */
+
 
 public class Entity implements Comparable<Entity> {
    // https://www.geeksforgeeks.org/check-line-touches-intersects-circle/
@@ -144,6 +149,7 @@ public class Entity implements Comparable<Entity> {
         return health>0;
     }
 
+
     public double getDistFromLine(double x1, double y1, double x2, double y2) {
 
         double A = xPos - x1;
@@ -177,17 +183,23 @@ public class Entity implements Comparable<Entity> {
         return Math.sqrt(dx * dx + dy * dy);
     }
 
-
+    /**
+     * Used to differentiate between X hit or Y hit on wall
+     */
     public double getSideFromLine(double x1, double y1, double x2, double y2) {
 
         double d = (xPos - x1) * (y2 - y1) - (yPos - y1) * (x2 - x1);
         return d;//Actual value worthless, only concerned with d being negative or postive Postive=Right side of sprite
     }
 
-
+    /**
+     * Getter function
+     */
     public Texture getTexture() {
         return texture;
     }
+
+
 
     @Override
     public int compareTo(Entity o) {
@@ -195,23 +207,39 @@ public class Entity implements Comparable<Entity> {
             return 1;
         } else return -1;
     }
-
+    /**
+     * Template for other entities
+     */
     protected void checkBullet(double xpos, double ypos, int damage, boolean playerBullet) {
 
         return;
     }
-
+    /**
+     * Use for not walking through Breakable walls
+     * and enemies
+     */
     public boolean collides(double xPos, double yPos) {
         return MathAssist.distanceBetweenPoints(xPos, yPos, this.xPos, this.yPos)<this.width*2;
     }
 
+    /**
+     * Added to help rendering in screen.
+     * Specifically this helps with the proccess when the raycasts out
+     * and check if it hit an X coridnate first or Y-cordinate on the grid system
+     *
+     */
     public int getPixel(int u, int v){
         return texture.getPixel(u,v);
     }
 
 }
 
-
+/**
+ * I had good intentions of making everything lambda functions
+ * This did not happen
+ * this is not used
+ * maybe in round 2
+ */
 
 interface Arithmetic {
 

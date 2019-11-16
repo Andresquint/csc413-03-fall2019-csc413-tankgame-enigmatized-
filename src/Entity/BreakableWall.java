@@ -2,29 +2,44 @@ package Entity;
 
 import Animation.Texture;
 import RayCasting.MathAssist;
-
+/**
+ * Breakable Wall Class
+ * Nothing Very Special here
+ * Has life
+ * The settings(the damage the player bullet does) destroys it in one hit
+ * The collision check for the wall
+ */
 public class BreakableWall extends Entity {
 
     boolean alive;
-
+    /**
+     * Constructor
+     */
     public BreakableWall(double xpos, double ypos, Texture texture){
         super(xpos, ypos, texture);
         super.health=50;
         this.alive=true;
-        try {
-            this.texture = texture;
-        }catch(Exception e){
-            System.out.println("BreakAbleWall Texture did note load!!!!!!!");
-        }
+        //Extra Code not needed
+//        try {
+//            this.texture = texture;
+//        }catch(Exception e){
+//            System.out.println("BreakAbleWall Texture did note load!!!!!!!");
+//        }
 
     }
-
+    /**
+     * Does nothing
+     * Design?
+     */
     public void updateBehavior(double delta){
-        if(alive) {}
+        /*if(alive) {}*/
     }
 
     public void PowerCollisionCheck(){}
 
+    /**
+     * Constructor
+     */
     protected void checkBullet(double xpos, double ypos, int damage, boolean playerBullet) {
         if (playerBullet && MathAssist.distanceBetweenPoints(xpos, ypos, this.xPos, this.yPos) < this.width + 0.1) {
             try {

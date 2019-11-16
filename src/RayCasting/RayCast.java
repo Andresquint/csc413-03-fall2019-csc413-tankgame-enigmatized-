@@ -1,7 +1,9 @@
 package RayCasting;
 
 import java.util.ArrayList;
-
+//NOTE
+//I STOLE THIS.
+//Forget where from now?
 public class RayCast {
 
     public static final double EPSILON = 0.000001;

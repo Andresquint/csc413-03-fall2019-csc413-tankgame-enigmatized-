@@ -12,7 +12,7 @@ import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import java.io.IOException;
 
-//https://github.com/DanielAlpizar/POO-Mycar/tree/fdbe6c7f553871890a7586be76fe39bbb87c3758/CarSimulator/src/Manager3D
+//
 
 
 public class Camera implements KeyListener{
@@ -61,6 +61,10 @@ public class Camera implements KeyListener{
         Weapon fist = new Weapon("resources/Weapons/fist.png", 2,(int)Math.round(.33*Game.screenWidth), (int)Math.round(.66*Game.screenWidth), 15, 2);
 
     }
+
+    /**
+     * Originally Loading a fist, but the bow seems valient
+     */
 
     private Weapon loadFist() throws IOException {
         //Initializes all the weapons below
@@ -186,7 +190,7 @@ public class Camera implements KeyListener{
     public void attack() throws IOException {
 
 
-        Game.playSound("sound/Shoot.wav");
+        Game.playSound("resources/sound/Shoot.wav");
         Game.levelInfo.getEnemies().add(new Bullet(this.xPos, this.yPos, new Texture("resources/bullet.png.png", 64), xDir, yDir, true, 50));
 
 

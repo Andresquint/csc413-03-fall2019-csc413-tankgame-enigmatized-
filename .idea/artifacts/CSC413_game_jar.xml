@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="CSC413-game:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/CSC413_game_jar</output-path>
+    <root id="archive" name="CSC413-game.jar">
+      <element id="module-output" name="CSC413-game" />
+    </root>
+  </artifact>
+</component>

@@ -5,6 +5,14 @@ import java.io.File;
 import java.io.IOException;
 import javax.imageio.ImageIO;
 
+
+/**
+ * This class loads 90% of the images in the game.
+ * It loads the walls
+ * It is used for the flipbook effect for TextureAnimation
+ */
+
+
 public class Texture {
     public int[] pixels;
     private String loc;
